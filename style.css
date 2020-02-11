@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.container {
+    margin: auto;
+    padding: 30px 0 50px 0;
+    text-align: left;
+    width: 50%;
+    min-width: 540px;
+    background: white;
+}
