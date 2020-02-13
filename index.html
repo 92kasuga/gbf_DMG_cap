@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GBF上限計算機</title>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <header>
+        　普攻上限：<span id="attackCap">1.00</span>倍(預測：<span id="estimatedAttack">44.5</span>萬)｜｜
+        奧義上限：<span id="CACap">1.00</span>倍(預測：<span id="estimatedCA">168.5</span>萬)｜｜
+        技能上限：<span id="skillCap">1.00</span>倍｜｜
+        CB上限：<span id="CBCap">1.00</span>倍(預測：最大<span id="estimatedCB">168.5</span>萬)
+    </header>
     <div class="container">
-        <header>
-            普攻上限：<span id="attackCap">1.00</span>倍(預測：<span id="estimatedAttack">44.5</span>萬)｜｜
-            奧義上限：<span id="CACap">1.00</span>倍(預測：<span id="estimatedCA">168.5</span>萬)｜｜
-            技傷上限：<span id="skillCap">1.00</span>倍｜｜
-            CB上限：<span id="CBCap">1.00</span>倍(預測：最大<span id="estimatedCB">168.5</span>萬)
-        </header>
+        <section><details><summary>使用範例（闇主天秤盤）</summary><img src="images/example.png"></details></section>
         <section>
             <h4>最終傷害UP（天司類）</h4>
             <form name="seraphicUp" id="seraphicUp">
@@ -26,12 +28,15 @@
             <label><input name="seraphic" type="radio" value="0.1"> SR(10%)</label>
             </p>
             <p>
-            塔羅召喚
+            塔羅
             <label><input name="arcarum" type="radio" value="0" checked> 無(0%)</label>
             <label><input name="arcarum" type="radio" value="0.1"> 4★(10%)</label>
-            <label><input name="arcarum" type="radio" value="0.07"> SSR3★(7%)</label>
+            <label><input name="arcarum" type="radio" value="0.07"> SSR(7%)</label>
             <label><input name="arcarum" type="radio" value="0.05"> SR3★(5%)</label>
             <label><input name="arcarum" type="radio" value="0.03"> SR(3%)</label>
+            </p>
+            <p>
+            <label>其他最終乘算類(與天司武加算e.g.豬妹二技)：<input name="otherFinal" type="number" min="0" value="0"> %</label>
             </p>
             </form>
         </section>
@@ -56,7 +61,7 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><input name="beast" type="number" value="0" min="0" max="3"></td><td>四象‧邪/劍賢劍</td>
+                        <td><input name="beast" type="number" value="0" min="0" max="3"></td><td>四象．邪/劍賢劍</td>
                         <td colspan="2">7%</td><td colspan="3">-</td><td>20%</td><td rowspan="5">20%</td>
                     </tr>
                         <td><input name="scales" type="number" value="0" min="0" max="1"></td><td>天秤</td>
@@ -96,18 +101,15 @@
                         <td><input name="sentenceNum" type="number" value="0" min="0" max="5"></td><td>通常必殺中</td>
                         <td><label><input name="sentence" type="radio" value="0.035">3.5%</label></td>
                         <td><label><input name="sentence" type="radio" value="0.05" checked>5%</label></td>
-                        <td><label><input name="summon" type="radio" value="1">無</label></td>
-                        <td><label><input name="summon" type="radio" value="2.4" checked>單</label></td>
-                        <td><label><input name="summon" type="radio" value="4.8">雙</label></td>
+                        <td rowspan="2"><label><input name="summon" type="radio" value="1">無</label></td>
+                        <td rowspan="2"><label><input name="summon" type="radio" value="2.4" checked>單</label></td>
+                        <td rowspan="2"><label><input name="summon" type="radio" value="4.8">雙</label></td>
                         <td rowspan="2">30%</td>
                     </tr>
                     <tr>
-                        <td><input name="glorycaNum" type="number" value="0" min="0" max="5"></td><td>通常英傑大</td>
+                        <td><input name="glorycaNum" type="number" value="0" min="0" max="2"></td><td>通常英傑大</td>
                         <td><label><input name="gloryca" type="radio" value="0.048">4.8%</label></td>
                         <td><label><input name="gloryca" type="radio" value="0.068" checked>6.8%</label></td>
-                        <td><label><input name="summong" type="radio" value="1">無</label></td>
-                        <td><label><input name="summong" type="radio" value="2.4" checked>單</label></td>
-                        <td><label><input name="summong" type="radio" value="4.8">雙</label></td>
                     </tr>
                     <tr>
                         <td><input name="huanglong" type="number" value="0" min="0" max="1"></td><td>主手黃龍槍</td>
@@ -129,7 +131,7 @@
                         <td colspan="2">10%</td><td colspan="3">-</td><td>10%</td>
                     </tr>
                     <tr>
-                        <td><input name="dualBlade" type="number" value="0" min="0" max="1"><td>雙劍英勇</td>
+                        <td><input name="dualBlade" type="number" value="0" min="0" max="1"><td>雙劍．英勇</td>
                         <td colspan="2">20%</td><td colspan="3">-</td><td>20%</td>
                     </tr>
                     <tr>
@@ -148,7 +150,7 @@
                         <td colspan="3">-</td><td rowspan="2">50%</td><td rowspan="4">50%</td>
                     </tr>
                     <tr>
-                        <td><input name="glorycbNum" type="number" value="0" min="0" max="5"><td>通常英傑大</td>
+                        <td><input name="glorycbNum" type="number" value="0" min="0" max="2"><td>通常英傑大</td>
                         <td><label><input name="glorycb" type="radio" value="0.048">4.8%</label></td>
                         <td><label><input name="glorycb" type="radio" value="0.068" checked>6.8%</label></td>
                         <td><label><input name="summoncb" type="radio" value="1">無</label></td>
@@ -156,7 +158,7 @@
                         <td><label><input name="summoncb" type="radio" value="4.8">雙</label></td>
                     </tr>
                     <tr>
-                        <td><input name="kengo" type="number" value="0" min="0" max="1"><td>劍豪英勇</td>
+                        <td><input name="kengo" type="number" value="0" min="0" max="1"><td>劍豪．英勇</td>
                         <td colspan="2">30%</td><td colspan="3">-</td><td>-</td>
                     </tr>
                     <tr>
@@ -185,13 +187,23 @@
                 <p>
                     <label>其他技能上限：<input name="otherSkill" type="number" min="0" value="0"> %</label>
                 </p>
+            </form>
+        </section>
+        <section>
+            <h4>特殊奧義上限</h4>
+            <form name="special" id="special">
                 <p>
-                    <label>其他最終乘算類(e.g.豬的二技)：<input name="otherFinal" type="number" min="0" value="0"> %</label>
+                    <label><input name="specialCA" type="radio" value="168.5" checked> 一般(168萬)</label>
+                    <label><input name="specialCA" type="radio" value="215"> 露莉亞(215萬)</label>
+                    <label><input name="specialCA" type="radio" value="203"> 終解十天眾(203萬)</label><br>
+                    <label><input name="specialCA" type="radio" value="215"> 蘿蔔米(215萬)</label>
+                    <label><input name="specialCA" type="radio" value="290"> 光女僕(290萬)</label>
+                    <label><input name="specialCA" type="radio" value="337"> 米琳(337萬)</label>
                 </p>
             </form>
         </section>
+        <footer><button onclick="topBtn()" id="topBtn">TOP</button></footer>
     </div>
-    <footer><button onclick="topBtn()" id="topBtn">TOP</button></footer>
 <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

@@ -2,6 +2,7 @@ const   seraphicUp = document.querySelector("#seraphicUp"),
         primarchUp = document.querySelector("#primarchUp"),
         weaponUp = document.querySelector("#weaponUp"),
         otherType = document.querySelector("#otherType"),
+        special = document.querySelector("#special"),
         attackCap = document.querySelector("#attackCap"),
         estimatedAttak = document.querySelector("#estimatedAttack"),
         CACap = document.querySelector("#CACap"),
@@ -11,37 +12,35 @@ const   seraphicUp = document.querySelector("#seraphicUp"),
         estimatedCB = document.querySelector("#estimatedCB");
 
 seraphicUp.addEventListener("change", function(){
-    attackCal();
-    CACal();
-    skillCal()
-    CBCal()
+    calculate();
 })
 primarchUp.addEventListener("change", function(){
-    attackCal();
-    CACal();
-    skillCal();
-    CBCal();
+    calculate();
 })
 weaponUp.addEventListener("change", function(){
-    attackCal();
-    CACal();
-    skillCal();
-    CBCal();
+    calculate();
 })
 otherType.addEventListener("change", function(){
-    attackCal();
-    CACal();
-    skillCal();
-    CBCal();
+    calculate();
+})
+special.addEventListener("change", function(){
+    calculate();
 })
 //回到頂端
 function topBtn() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+//即時計算
+function calculate(){
+    attackCal();
+    CACal();
+    skillCal();
+    CBCal();
+}
 //==============最終上限算式==============
 function attackCal(){
-    const seraphicTotal = Number(seraphicUp.seraphic.value) + Number(seraphicUp.arcarum.value) + Number(otherType.otherFinal.value)/100;
+    const seraphicTotal = Number(seraphicUp.seraphic.value) + Number(seraphicUp.arcarum.value) + Number(seraphicUp.otherFinal.value)/100;
     const others = 
     Number(primarchUp.primarch.value) + 
     Number(weaponUp.omegaAttack.value) * 0.1 +
@@ -65,7 +64,7 @@ function CACal(){
     Number(otherType.otherCA.value)/100;
     const CADisplay = (seraphicTotal+1) * (others+1);
     CACap.textContent = CADisplay.toFixed(2);
-    estimatedCA.textContent = (CADisplay * 168.5).toFixed(1);
+    estimatedCA.textContent = (CADisplay * Number(special.specialCA.value)).toFixed(1);
 }
 function skillCal(){
     const seraphicTotal = Number(seraphicUp.seraphic.value) + Number(seraphicUp.arcarum.value);
@@ -107,7 +106,7 @@ function handleCA(){
     }
     let normalCap = 
     Number(weaponUp.sentenceNum.value) * Number(weaponUp.sentence.value) * Number(weaponUp.summon.value)+
-    Number(weaponUp.glorycaNum.value) * Number(weaponUp.gloryca.value) * Number(weaponUp.summong.value);
+    Number(weaponUp.glorycaNum.value) * Number(weaponUp.gloryca.value) * Number(weaponUp.summon.value);
     if(normalCap > 0.3){
         normalCap = 0.3;
     }
