@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
         　普攻上限：<span id="attackCap">1.00</span>倍(預測：<span id="estimatedAttack">44.5</span>萬)｜｜
         奧義上限：<span id="CACap">1.00</span>倍(預測：<span id="estimatedCA">168.5</span>萬)｜｜
         技能上限：<span id="skillCap">1.00</span>倍｜｜
-        CB上限：<span id="CBCap">1.00</span>倍(預測：最大<span id="estimatedCB">168.5</span>萬)
+        CB上限：<span id="CBCap">1.00</span>倍(預測：<span id="estimatedCB">170.0</span>萬)
     </header>
     <div class="container">
         <section><details><summary>使用範例（闇主天秤盤）</summary><img src="images/example.png"></details></section>
@@ -21,30 +21,30 @@
             <h4>最終傷害UP（天司類）</h4>
             <form name="seraphicUp" id="seraphicUp">
             <p>
-            天司武
+            【天司武】
             <label><input name="seraphic" type="radio" value="0" checked> 無(0%)</label>
-            <label><input name="seraphic" type="radio" value="0.23"> 4★(23%)</label>
-            <label><input name="seraphic" type="radio" value="0.2"> SSR3★(20%)</label>
             <label><input name="seraphic" type="radio" value="0.1"> SR(10%)</label>
+            <label><input name="seraphic" type="radio" value="0.2"> SSR3★(20%)</label>
+            <label><input name="seraphic" type="radio" value="0.23"> 4★(23%)</label>
             </p>
             <p>
-            塔羅
+            【塔羅召喚】
             <label><input name="arcarum" type="radio" value="0" checked> 無(0%)</label>
-            <label><input name="arcarum" type="radio" value="0.1"> 4★(10%)</label>
-            <label><input name="arcarum" type="radio" value="0.07"> SSR(7%)</label>
-            <label><input name="arcarum" type="radio" value="0.05"> SR3★(5%)</label>
             <label><input name="arcarum" type="radio" value="0.03"> SR(3%)</label>
+            <label><input name="arcarum" type="radio" value="0.05"> SR3★(5%)</label><br>
+            <label><input name="arcarum" type="radio" value="0.07"> SSR(7%)</label>
+            <label><input name="arcarum" type="radio" value="0.1"> SSR4★(10%)</label>
             </p>
             <p>
-            <label>其他最終乘算類(與天司武加算e.g.豬妹二技)：<input name="otherFinal" type="number" min="0" value="0"> %</label>
+            <label>【其他天司類加算】(e.g.豬妹二技，詳見底下補充)：<input name="otherFinal" type="number" min="0" value="0"> %</label>
             </p>
             </form>
         </section>
         <section>
-            <h4>上限UP（召喚類）</h4>
+            <h4>上限UP類（召喚）</h4>
             <form name="primarchUp" id="primarchUp">
             <p>
-            天司召喚
+            【天司召喚】
             <label><input name="primarch" type="radio" value="0" checked> 無(0%)</label>
             <label><input name="primarch" type="radio" value="0.05"> 0★(5%)</label>
             <label><input name="primarch" type="radio" value="0.1"> 3★(10%)</label>
@@ -52,7 +52,7 @@
             </form>
         </section>
         <section>
-            <h4>上限UP（武器類）</h4>
+            <h4>上限UP類（武器）</h4>
             <form name="weaponUp" id="weaponUp">
                 <table>
                     <tr><th class="attack" colspan="9">傷害上限</th></tr>
@@ -61,7 +61,7 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><input name="beast" type="number" value="0" min="0" max="3"></td><td>四象．邪/劍賢劍</td>
+                        <td><input name="beast" type="number" value="0" min="0" max="3"></td><td>四象．邪/角色武</td>
                         <td colspan="2">7%</td><td colspan="3">-</td><td>20%</td><td rowspan="5">20%</td>
                     </tr>
                         <td><input name="scales" type="number" value="0" min="0" max="1"></td><td>天秤</td>
@@ -79,7 +79,7 @@
                     <tr><th class="normal" colspan="9">普攻上限</th></tr>
                     <tr>
                         <td><input name="omegaAttack"" type="number" value="0" min="0" max="1"></td><td>U武/終末神器</td>
-                        <td colspan="2">10%</td><td colspan="3">-</td><td>10%</td><td>10%</td>
+                        <td colspan="2">10%</td><td colspan="3">-</td><td>-</td><td>10%</td>
                     </tr>
                     <tr><th class="CA" colspan="9">奧義上限</th></tr>
                     <tr>
@@ -89,7 +89,7 @@
                         <td colspan="3">-</td><td>30%</td><td rowspan="4">60%</td>
                     </tr>
                     <tr>
-                        <td><input name="sentenceoNum" type="number" value="0" min="0" max="4"></td><td>方陣必殺中</td>
+                        <td><input name="sentenceoNum" type="number" value="0" min="0" max="3"></td><td>方陣必殺中</td>
                         <td><label><input name="sentenceo" type="radio" value="0.07">7%</label></td>
                         <td><label><input name="sentenceo" type="radio" value="0.095" checked>9.5%</label></td>
                         <td><label><input name="summono" type="radio" value="1">無</label></td>
@@ -98,7 +98,7 @@
                         <td>30%</td>
                     </tr>
                     <tr>
-                        <td><input name="sentenceNum" type="number" value="0" min="0" max="5"></td><td>通常必殺中</td>
+                        <td><input name="sentenceNum" type="number" value="0" min="0" max="3"></td><td>通常必殺中</td>
                         <td><label><input name="sentence" type="radio" value="0.035">3.5%</label></td>
                         <td><label><input name="sentence" type="radio" value="0.05" checked>5%</label></td>
                         <td rowspan="2"><label><input name="summon" type="radio" value="1">無</label></td>
@@ -117,22 +117,22 @@
                     </tr>
                     <tr>
                         <td><input name="omedaCA" type="number" value="0" min="0" max="1"></td><td>U武/終末神器</td>
-                        <td colspan="2">15%</td><td colspan="3">-</td><td>15%</td><td>15%</td>
+                        <td colspan="2">15%</td><td colspan="3">-</td><td>-</td><td>15%</td>
                     </tr>
                     <tr><th class="skill" colspan="9">技能上限</th></tr>
                     <tr>
-                        <td><input name="artsNum" type="number" value="0" min="0" max="3"><td>アーツ系列</td>
+                        <td><input name="artsNum" type="number" value="0" min="0" max="3"><td>アーツ</td>
                         <td><label><input name="arts" type="radio" value="0.1">10%</label></td>
                         <td><label><input name="arts" type="radio" value="0.15" checked>15%</label></td>
                         <td colspan="3">-</td><td>40%</td><td rowspan="3">40%</td>
                     </tr>
                     <tr>
                         <td><input name="twoSword" type="number" value="0" min="0" max="1"><td>雙劍術(4★職武)</td>
-                        <td colspan="2">10%</td><td colspan="3">-</td><td>10%</td>
+                        <td colspan="2">10%</td><td colspan="3">-</td><td>-</td>
                     </tr>
                     <tr>
                         <td><input name="dualBlade" type="number" value="0" min="0" max="1"><td>雙劍．英勇</td>
-                        <td colspan="2">20%</td><td colspan="3">-</td><td>20%</td>
+                        <td colspan="2">20%</td><td colspan="3">-</td><td>-</td>
                     </tr>
                     <tr>
                         <td><input name="qilinLyre" type="number" value="0" min="0" max="1"><td>主手麒麟弦</td>
@@ -140,7 +140,7 @@
                     </tr>
                     <tr>
                         <td><input name="omegaSkill" type="number" value="0" min="0" max="1"><td>U武/終末神器</td>
-                        <td colspan="2">50%</td><td colspan="3">-</td><td>50%</td><td>50%</td>
+                        <td colspan="2">50%</td><td colspan="3">-</td><td>-</td><td>50%</td>
                     </tr>
                     <tr><th class="CB" colspan="9">CB上限</th></tr>
                     <tr>
@@ -163,7 +163,7 @@
                     </tr>
                     <tr>
                         <td><input name="omedgCB" type="number" value="0" min="0" max="1"><td>U武/終末神器</td>
-                        <td colspan="2">50%</td><td colspan="3">-</td><td>50%</td>
+                        <td colspan="2">50%</td><td colspan="3">-</td><td>-</td>
                     </tr>
                     </tbody>
                 </table>
@@ -173,10 +173,15 @@
             <h4>其他（LB、戒指等）</h4>
             <form name="otherType" id="otherType">
                 <p>
-                    主角LB
+                    【主角LB】
                     <label><input name="lb" type="radio" value="0" checked> 無(0%)</label>
                     <label><input name="lb" type="radio" value="0.1"> rank170(10%)</label>
                     <label><input name="lb" type="radio" value="0.15"> rank195(15%)</label>
+                </p>
+                <p>
+                    【Buff】
+                    <label><input name="buff" type="radio" value="0" checked> 無(0%)</label>
+                    <label><input name="buff" type="radio" value="1"> 反骨/追打系(普攻116萬/奧義+50萬)</label>
                 </p>
                 <p>
                     <label>其他傷害上限：<input name="other" type="number" min="0" value="0"> %</label>
@@ -195,14 +200,60 @@
                 <p>
                     <label><input name="specialCA" type="radio" value="168.5" checked> 一般(168萬)</label>
                     <label><input name="specialCA" type="radio" value="215"> 露莉亞(215萬)</label>
-                    <label><input name="specialCA" type="radio" value="203"> 終解十天眾(203萬)</label><br>
+                    <label><input name="specialCA" type="radio" value="202"> 終解十天眾(202萬)</label><br>
                     <label><input name="specialCA" type="radio" value="215"> 蘿蔔米(215萬)</label>
                     <label><input name="specialCA" type="radio" value="290"> 光女僕(290萬)</label>
                     <label><input name="specialCA" type="radio" value="337"> 米琳(337萬)</label>
                 </p>
             </form>
         </section>
-        <footer><button onclick="topBtn()" id="topBtn">TOP</button></footer>
+        <section>
+            <details>
+                <summary>遊戲用語</summary>
+                <article>
+                    <p>遊戲中跟上限有關的敘述，大致能這樣區分：</p>
+                    <p>ダメージ上限UP：提高傷害上限。</p>
+                    <p>与ダメージUP：天司類增傷。</p>
+                    <p>与ダメージ上昇：最終加算的固定傷害。(e.g.虛空武)</p>
+                </article>
+            </details>
+            <details>
+                <summary>天司類補充</summary>
+                <article>
+                    <p>不同於單純提高上限，天司武和塔羅(俗稱天司類)與最終傷害乘算。</p>
+                    <p>角色（如終十天）的天司類被動與天司武器衝突；部分技能、被動自帶普攻天司效果，這類效果不限克屬且與其他天司類加算，
+                        例如：
+                        <ul>
+                            <li>士兵limit技(10%)</li>
+                            <li>L莫妮卡刀奧義(全體10%)</li>
+                            <li>希斯一技(30%)</li>
+                            <li>濕婆被動(15%)</li>
+                            <li>豬妹二技(全體5%~15%)和被動(15%)</li>
+                            <li>戰車被動(10%~25%)</li>
+                            <li>漢女三技(條件全體10%)</li>
+                            <li>斯坦&阿莉莎三技(10%)</li>
+                            <li>聖誕繆昂被動(50%)</li>
+                            <li>火黑道狐二技(10%)</li>
+                        </ul>
+                    </p>
+                </article>
+            </details>
+            <details>
+                <summary>武器補充</summary>
+                <article>
+                    <ul>
+                    <li>效果同四象．邪：劍賢、水狐解放武。</li>
+                    <li>イクシード(exceed/excelsior)：闇高寶斧、黑風媽短、黑鰻魚短、（風維拉、塔尼亞、冰皇）解放武。</li>
+                    <li>アーツ(arts)：火連隊劍、水連隊銃、戰斧、天秤、（光教官、光銀姊、情人玉米、仇閃醬、路西烏斯、班特）解放武。</li>
+                    <li>チェインフォース(chain force)：風連隊劍、水高寶劍。</li>
+                    </ul>
+                </article>
+            </details>
+        </section>
+        <footer>
+            <button onclick="topBtn()" id="topBtn">TOP</button>
+            <p style="font-size: 0.8em">最後更新：2020/02/14</p>
+        </footer>
     </div>
 <script type="text/javascript" src="main.js"></script>
 </body>

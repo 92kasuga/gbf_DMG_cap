@@ -49,7 +49,11 @@ function attackCal(){
     Number(otherType.other.value)/100;
     const attackDisplay = (seraphicTotal+1) * (others+1);
     attackCap.textContent = attackDisplay.toFixed(2);
-    estimatedAttak.textContent = (attackDisplay * 44.5).toFixed(1);
+    if (otherType.buff.value == 1){
+        estimatedAttak.textContent = (attackDisplay * 116).toFixed(1);
+    } else {
+        estimatedAttak.textContent = (attackDisplay * 44.5).toFixed(1);
+    }
 }
 function CACal(){
     const seraphicTotal = Number(seraphicUp.seraphic.value) + Number(seraphicUp.arcarum.value);
@@ -64,7 +68,11 @@ function CACal(){
     Number(otherType.otherCA.value)/100;
     const CADisplay = (seraphicTotal+1) * (others+1);
     CACap.textContent = CADisplay.toFixed(2);
-    estimatedCA.textContent = (CADisplay * Number(special.specialCA.value)).toFixed(1);
+    if (otherType.buff.value == 1){
+        estimatedCA.textContent = (CADisplay * Number(special.specialCA.value) + 50).toFixed(1);
+    } else {
+        estimatedCA.textContent = (CADisplay * Number(special.specialCA.value)).toFixed(1);
+    }
 }
 function skillCal(){
     const seraphicTotal = Number(seraphicUp.seraphic.value) + Number(seraphicUp.arcarum.value);
@@ -83,7 +91,7 @@ function skillCal(){
 function CBCal(){
     const CBDisplay = (handleCB()+1);
     CBCap.textContent = CBDisplay.toFixed(2);
-    estimatedCB.textContent = (CBDisplay * 168.5).toFixed(1);
+    estimatedCB.textContent = (CBDisplay * 170).toFixed(1);
 }
 //==============處理各別上限==============
 function handleCommonCap(){
