@@ -28,12 +28,13 @@
             <label><input name="seraphic" type="radio" value="0.23"> 4★(23%)</label>
             </p>
             <p>
-            【塔羅召喚】
+            <div class="separate">【塔羅召喚】
             <label><input name="arcarum" type="radio" value="0" checked> 無(0%)</label>
             <label><input name="arcarum" type="radio" value="0.03"> SR(3%)</label>
-            <label><input name="arcarum" type="radio" value="0.05"> SR3★(5%)</label><br>
+            <label><input name="arcarum" type="radio" value="0.05"> SR3★(5%)</label>
+            </div><div class="separate">
             <label><input name="arcarum" type="radio" value="0.07"> SSR(7%)</label>
-            <label><input name="arcarum" type="radio" value="0.1"> SSR4★(10%)</label>
+            <label><input name="arcarum" type="radio" value="0.1"> SSR4★(10%)</label></div>
             </p>
             <p>
             <label>【其他天司類加算】(e.g.豬妹二技，詳見底下補充)：<input name="otherFinal" type="number" min="0" value="0"> %</label>
@@ -61,7 +62,7 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><input name="beast" type="number" value="0" min="0" max="3"></td><td>四象．邪/角色武</td>
+                        <td><input name="beast" type="number" value="0" min="0" max="3"></td><td>四象．邪/其他</td>
                         <td colspan="2">7%</td><td colspan="3">-</td><td>20%</td><td rowspan="5">20%</td>
                     </tr>
                         <td><input name="scales" type="number" value="0" min="0" max="1"></td><td>天秤</td>
@@ -139,6 +140,10 @@
                         <td colspan="2">20%</td><td colspan="3">-</td><td>-</td><td>20%</td>
                     </tr>
                     <tr>
+                        <td><input name="flammaOrbis" type="number" value="0" min="0" max="1"><td>主手六道銃</td>
+                        <td colspan="2">條件30%</td><td colspan="3">-</td><td>-</td><td>30%</td>
+                    </tr>
+                    <tr>
                         <td><input name="omegaSkill" type="number" value="0" min="0" max="1"><td>U武/終末神器</td>
                         <td colspan="2">50%</td><td colspan="3">-</td><td>-</td><td>50%</td>
                     </tr>
@@ -147,7 +152,7 @@
                         <td><input name="chainForceNum" type="number" value="0" min="0" max="3"><td>チェインフォース</td>
                         <td><label><input name="chainForce" type="radio" value="0.2">20%</label></td>
                         <td><label><input name="chainForce" type="radio" value="0.3" checked>30%</label></td>
-                        <td colspan="3">-</td><td rowspan="2">50%</td><td rowspan="4">50%</td>
+                        <td colspan="3">-</td><td>50%</td><td rowspan="4">50%</td>
                     </tr>
                     <tr>
                         <td><input name="glorycbNum" type="number" value="0" min="0" max="2"><td>通常英傑大</td>
@@ -156,6 +161,7 @@
                         <td><label><input name="summoncb" type="radio" value="1">無</label></td>
                         <td><label><input name="summoncb" type="radio" value="2.4" checked>單</label></td>
                         <td><label><input name="summoncb" type="radio" value="3.8">雙</label></td>
+                        <td>50%</td>
                     </tr>
                     <tr>
                         <td><input name="kengo" type="number" value="0" min="0" max="1"><td>劍豪．英勇</td>
@@ -231,6 +237,7 @@
                             <li>豬妹二技(全體5%~15%)和被動(15%)</li>
                             <li>戰車被動(10%~25%)</li>
                             <li>漢女三技(條件全體10%)</li>
+                            <li>泳裝聖德芬三技(條件全體10%)</li>
                             <li>斯坦&阿莉莎三技(10%)</li>
                             <li>聖誕繆昂被動(50%)</li>
                             <li>火黑道狐二技(10%)</li>
@@ -242,9 +249,9 @@
                 <summary>武器補充</summary>
                 <article>
                     <ul>
-                    <li>效果同四象．邪：劍賢、水狐解放武。</li>
+                    <li>效果同四象．邪：光金月短、（劍賢、水狐、風貞、柯羅薩斯）解放武。</li>
                     <li>イクシード(exceed/excelsior)：闇高寶斧、黑風媽短、黑鰻魚短、（風維拉、塔尼亞、冰皇）解放武。</li>
-                    <li>アーツ(arts)：火連隊劍、水連隊銃、戰斧、天秤、（光教官、光銀姊、情人玉米、仇閃醬、路西烏斯、班特）解放武。</li>
+                    <li>アーツ(arts)：火連隊劍、水連隊銃、戰斧、天秤、（光教官、光銀姊、情人玉米、仇閃醬、路西烏斯、班特、情人軍神）解放武。</li>
                     <li>チェインフォース(chain force)：風連隊劍、水高寶劍。</li>
                     </ul>
                 </article>

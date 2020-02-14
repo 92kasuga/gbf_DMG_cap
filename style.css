@@ -37,6 +37,9 @@ h4 {
     line-height: 1.8em;
     background-color: #333;
 }
+.separate{
+    display: inline-block;
+}
 input {
     max-width: 30px;
 }
@@ -98,4 +101,15 @@ footer {
 }
 #topBtn:hover{
     background-color: #333;
+}
+@media (max-width: 540px) {
+    summary {
+        line-height: 3.2em;
+    }
+    #topBtn {
+        width: 140px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 1.1em;
+    }
 }

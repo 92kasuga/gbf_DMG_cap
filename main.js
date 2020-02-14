@@ -79,6 +79,7 @@ function skillCal(){
     const others = 
     Number(primarchUp.primarch.value) +
     Number(weaponUp.qilinLyre.value) * 0.2 +
+    Number(weaponUp.flammaOrbis.value) * 0.3 +
     Number(weaponUp.omegaSkill.value) * 0.5 +
     handleCommonCap() +
     handleSkill() +
