@@ -30,7 +30,7 @@ summary:hover {
     background-color: #E2E2E2;
     cursor:pointer;
 }
-img {
+details img {
     width: 100%;
 }
 h4 {
@@ -42,9 +42,19 @@ h4 {
 .separate{
     display: inline-block;
 }
-input {
+input[type="number"] {
     max-width: 30px;
     cursor:pointer;
+}
+label input[type="radio"] {
+    position: relative;
+}
+input[type="radio"] {
+    position: absolute;
+    top: 2px;
+    margin: 2px;
+    cursor:pointer;
+    zoom: 1.2;
 }
 input[type="checkbox"] {
     display:none;
@@ -85,6 +95,7 @@ select {
     width: 22px;
     padding-right: 6px;
     background-color: #fff;
+    cursor:pointer;
 }
 select::-ms-expand {
     display: none;
