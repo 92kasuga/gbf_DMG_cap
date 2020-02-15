@@ -1,5 +1,5 @@
 const   seraphicUp = document.querySelector("#seraphicUp"),
-        primarchUp = document.querySelector("#primarchUp"),
+        supUp = document.querySelector("#supUp"),
         weaponUp = document.querySelector("#weaponUp"),
         otherType = document.querySelector("#otherType"),
         special = document.querySelector("#special"),
@@ -11,10 +11,11 @@ const   seraphicUp = document.querySelector("#seraphicUp"),
         CBCap = document.querySelector("#CBCap"),
         estimatedCB = document.querySelector("#estimatedCB");
 
+
 seraphicUp.addEventListener("change", function(){
     calculate();
 })
-primarchUp.addEventListener("change", function(){
+supUp.addEventListener("change", function(){
     calculate();
 })
 weaponUp.addEventListener("change", function(){
@@ -31,6 +32,15 @@ function topBtn() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+//取得勾選對象的值
+function isChecked(elem){
+    const target = document.querySelector("input[name='" + elem + "']");
+    if(target.checked){
+        return Number(target.value);
+    } else {
+        return 0;
+    }
+}
 //即時計算
 function calculate(){
     attackCal();
@@ -42,8 +52,9 @@ function calculate(){
 function attackCal(){
     const seraphicTotal = Number(seraphicUp.seraphic.value) + Number(seraphicUp.arcarum.value) + Number(seraphicUp.otherFinal.value)/100;
     const others = 
-    Number(primarchUp.primarch.value) + 
-    Number(weaponUp.omegaAttack.value) * 0.1 +
+    Number(supUp.primarch.value) +
+    Number(supUp.chara.value) +
+    isChecked("omegaAttack") +
     handleCommonCap() +
     Number(otherType.lb.value) +
     Number(otherType.other.value)/100;
@@ -58,9 +69,10 @@ function attackCal(){
 function CACal(){
     const seraphicTotal = Number(seraphicUp.seraphic.value) + Number(seraphicUp.arcarum.value);
     const others = 
-    Number(primarchUp.primarch.value) +
-    Number(weaponUp.huanglong.value) * 0.2 +
-    Number(weaponUp.omedaCA.value) * 0.15 +
+    Number(supUp.primarch.value) +
+    Number(supUp.chara.value) +
+    isChecked("huanglong") +
+    isChecked("omedaCA") +
     handleCommonCap() +
     handleCA() +
     Number(otherType.lb.value) +
@@ -77,10 +89,11 @@ function CACal(){
 function skillCal(){
     const seraphicTotal = Number(seraphicUp.seraphic.value) + Number(seraphicUp.arcarum.value);
     const others = 
-    Number(primarchUp.primarch.value) +
-    Number(weaponUp.qilinLyre.value) * 0.2 +
-    Number(weaponUp.flammaOrbis.value) * 0.3 +
-    Number(weaponUp.omegaSkill.value) * 0.5 +
+    Number(supUp.primarch.value) +
+    Number(supUp.chara.value) +
+    isChecked("qilinLyre") +
+    isChecked("flammaOrbis")+
+    isChecked("omegaSkill") +
     handleCommonCap() +
     handleSkill() +
     Number(otherType.lb.value) +
@@ -98,9 +111,9 @@ function CBCal(){
 function handleCommonCap(){
     let cap = 
     Number(weaponUp.beast.value) * 0.07 +
-    Number(weaponUp.scales.value) * 0.1+
-    Number(weaponUp.axe.value) * 0.1+
-    Number(weaponUp.qilinbow.value) * 0.1+
+    isChecked("scales") +
+    isChecked("axe") +
+    isChecked("qilinbow") +
     Number(weaponUp.cosmos.value) *0.01;
     if(cap > 0.2){
         cap = 0.2;
@@ -130,8 +143,8 @@ function handleSkill(){
     if(artsCap > 0.4){
         artsCap = 0.4;
     }
-    let twoSwordCap = Number(weaponUp.twoSword.value) * 0.1;
-    let dualBladeCap = Number(weaponUp.dualBlade.value) * 0.2;
+    let twoSwordCap = isChecked("twoSword");
+    let dualBladeCap = isChecked("dualBlade");
     let total = artsCap + twoSwordCap + dualBladeCap;
     if(total > 0.4){
         total = 0.4;
@@ -141,7 +154,7 @@ function handleSkill(){
 function handleCB(){
     let chainForceCap = Number(weaponUp.chainForceNum.value) * Number(weaponUp.chainForce.value);
     let normalCap = Number(weaponUp.glorycbNum.value) * Number(weaponUp.glorycb.value) * Number(weaponUp.summoncb.value);
-    let total = chainForceCap + normalCap + Number(weaponUp.kengo.value) * 0.3 + Number(weaponUp.omedgCB.value) * 0.5
+    let total = chainForceCap + normalCap + isChecked("kengo") + isChecked("omedgCB");
     if(total > 0.5){
         total = 0.5;
     }
