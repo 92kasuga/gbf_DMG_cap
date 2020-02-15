@@ -84,6 +84,7 @@ select {
     direction: rtl;
     width: 22px;
     padding-right: 6px;
+    background-color: #fff;
 }
 select::-ms-expand {
     display: none;
@@ -125,7 +126,7 @@ th {
     display: none;
     height: 1.2em;
     width: 135px;
-    line-height: 1em;
+    line-height: 1.2em;
     left: 10px;
     bottom: -12px;
     border: 1px solid #000;
