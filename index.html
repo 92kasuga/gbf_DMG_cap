@@ -55,6 +55,11 @@
             <label><input name="chara" type="radio" value="0" checked> 無(0%)</label>
             <label><input name="chara" type="radio" value="0.1"> 逆位凱姆(10%)</label>
             </p>
+            <p>
+            【角色—奧上】
+            <label><input name="charaCA" type="radio" value="0" checked> 無(0%)</label>
+            <label><input name="charaCA" type="radio" value="0.1"> lv90劍王(10%)</label>
+            </p>
             </form>
         </section>
         <section>
@@ -284,6 +289,9 @@
                 <p>
                     <label>其他技能上限：<input name="otherSkill" type="number" min="0" value="0"> %</label>
                 </p>
+                <p>
+                    <label>其他CB上限：<input name="otherCB" type="number" min="0" value="0"> %</label>
+                </p>
             </form>
         </section>
         <section>
@@ -300,6 +308,14 @@
             </form>
         </section>
         <section>
+            <h4>補充說明</h4>
+            <details>
+                <summary>關於本計算機</summary>
+                <article>
+                    <p>計算項目以數值固定的裝備、被動為主，要發動奧義、按技能、疊層、疊T數才有效果的不列，效果量太低、非主流的也不列（比如遠古時代只有5%技能上限的角色武），沒有列出來的項目可利用「其他」分類的自由輸入欄加算。</p>
+                    <p>另外，會心、固傷也不列，畢竟都固傷了心算還比較快，不過之後會考慮整理個效果量列表。</p>
+                </article>
+            </details>
             <details>
                 <summary>遊戲用語</summary>
                 <article>
@@ -314,7 +330,7 @@
                 <article>
                     <p>不同於單純提高上限，天司武和塔羅(俗稱天司類)與最終傷害乘算。</p>
                     <p>角色（如終十天）的天司類被動與天司武器衝突；部分技能、被動自帶普攻天司效果，這類效果不限克屬且與其他天司類加算，
-                        例如：
+                        簡單整理如下：
                         <ul>
                             <li>士兵limit技(10%)</li>
                             <li>L莫妮卡刀奧義(全體10%)</li>
@@ -345,7 +361,7 @@
         </section>
         <footer>
             <button onclick="topBtn()" id="topBtn">TOP</button>
-            <p style="font-size: 0.8em">最後更新：2020/02/15</p>
+            <p style="font-size: 0.8em">最後更新：2020/02/16</p>
         </footer>
     </div>
 <script type="text/javascript" src="main.js"></script>

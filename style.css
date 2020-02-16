@@ -44,7 +44,6 @@ h4 {
 }
 input[type="number"] {
     max-width: 30px;
-    cursor:pointer;
 }
 label input[type="radio"] {
     position: relative;

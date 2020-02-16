@@ -71,6 +71,7 @@ function CACal(){
     const others = 
     Number(supUp.primarch.value) +
     Number(supUp.chara.value) +
+    Number(supUp.charaCA.value) +
     isChecked("huanglong") +
     isChecked("omedaCA") +
     handleCommonCap() +
@@ -103,7 +104,8 @@ function skillCal(){
     skillCap.textContent = skillDisplay.toFixed(2);
 }
 function CBCal(){
-    const CBDisplay = (handleCB()+1);
+    const others = handleCB() + Number(otherType.otherCB.value)/100;
+    const CBDisplay = (others+1);
     CBCap.textContent = CBDisplay.toFixed(2);
     estimatedCB.textContent = (CBDisplay * 170).toFixed(1);
 }
