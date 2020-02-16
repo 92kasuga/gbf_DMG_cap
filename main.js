@@ -82,7 +82,7 @@ function CACal(){
     const CADisplay = (seraphicTotal+1) * (others+1);
     CACap.textContent = CADisplay.toFixed(2);
     if (otherType.buff.value == 1){
-        estimatedCA.textContent = (CADisplay * Number(special.specialCA.value) + 50).toFixed(1);
+        estimatedCA.textContent = (CADisplay * (Number(special.specialCA.value) + 50)).toFixed(1);
     } else {
         estimatedCA.textContent = (CADisplay * Number(special.specialCA.value)).toFixed(1);
     }
