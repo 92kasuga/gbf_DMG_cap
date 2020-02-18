@@ -146,8 +146,7 @@ function handleSkill(){
         artsCap = 0.4;
     }
     let twoSwordCap = isChecked("twoSword");
-    let dualBladeCap = isChecked("dualBlade");
-    let total = artsCap + twoSwordCap + dualBladeCap;
+    let total = artsCap + twoSwordCap;
     if(total > 0.4){
         total = 0.4;
     }
