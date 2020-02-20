@@ -78,7 +78,7 @@ function CACal(){
     getValue(supUp,"chara") +
     getValue(supUp,"charaCA") +
     isChecked(weaponUp,"huanglong") +
-    isChecked(weaponUp,"omedaCA") +
+    isChecked(weaponUp,"omegaCA") +
     handleCommonCap() +
     handleCA() +
     getValue(otherType,"lb") +
