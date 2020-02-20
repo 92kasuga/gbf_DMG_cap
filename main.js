@@ -11,7 +11,7 @@ const   seraphicUp = document.querySelector("#seraphicUp"),
         CBCap = document.querySelector("#CBCap"),
         estimatedCB = document.querySelector("#estimatedCB");
 
-
+//偵測動作並更新計算
 seraphicUp.addEventListener("change", function(){
     calculate();
 })
@@ -27,21 +27,26 @@ otherType.addEventListener("change", function(){
 special.addEventListener("change", function(){
     calculate();
 })
-//回到頂端
+//回到頁面頂端
 function topBtn() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
 //取得勾選對象的值
-function isChecked(elem){
-    const target = document.querySelector("input[name='" + elem + "']");
+function isChecked(form, elem){
+    const target = form[name= elem];
     if(target.checked){
         return Number(target.value);
     } else {
         return 0;
     }
 }
-//即時計算
+//取得單選項目的值
+function getValue(form, elem){
+    const target = Number(form[name= elem].value);
+    return target;
+}
+//計算全部結果
 function calculate(){
     attackCal();
     CACal();
@@ -50,14 +55,14 @@ function calculate(){
 }
 //==============最終上限算式==============
 function attackCal(){
-    const seraphicTotal = Number(seraphicUp.seraphic.value) + Number(seraphicUp.arcarum.value) + Number(seraphicUp.otherFinal.value)/100;
+    const seraphicTotal = getValue(seraphicUp,"seraphic") + getValue(seraphicUp,"arcarum") + getValue(seraphicUp,"otherFinal")/100;
     const others = 
-    Number(supUp.primarch.value) +
-    Number(supUp.chara.value) +
-    isChecked("omegaAttack") +
+    getValue(supUp,"primarch") +
+    getValue(supUp,"chara") +
+    isChecked(weaponUp,"omegaAttack") +
     handleCommonCap() +
-    Number(otherType.lb.value) +
-    Number(otherType.other.value)/100;
+    getValue(otherType,"lb") +
+    getValue(otherType,"other")/100;
     const attackDisplay = (seraphicTotal+1) * (others+1);
     attackCap.textContent = attackDisplay.toFixed(2);
     if (otherType.buff.value == 1){
@@ -67,44 +72,44 @@ function attackCal(){
     }
 }
 function CACal(){
-    const seraphicTotal = Number(seraphicUp.seraphic.value) + Number(seraphicUp.arcarum.value);
+    const seraphicTotal = getValue(seraphicUp,"seraphic") + getValue(seraphicUp,"arcarum");
     const others = 
-    Number(supUp.primarch.value) +
-    Number(supUp.chara.value) +
-    Number(supUp.charaCA.value) +
-    isChecked("huanglong") +
-    isChecked("omedaCA") +
+    getValue(supUp,"primarch") +
+    getValue(supUp,"chara") +
+    getValue(supUp,"charaCA") +
+    isChecked(weaponUp,"huanglong") +
+    isChecked(weaponUp,"omedaCA") +
     handleCommonCap() +
     handleCA() +
-    Number(otherType.lb.value) +
-    Number(otherType.other.value)/100 +
-    Number(otherType.otherCA.value)/100;
+    getValue(otherType,"lb") +
+    getValue(otherType,"other")/100 +
+    getValue(otherType,"otherCA")/100;
     const CADisplay = (seraphicTotal+1) * (others+1);
     CACap.textContent = CADisplay.toFixed(2);
     if (otherType.buff.value == 1){
-        estimatedCA.textContent = (CADisplay * (Number(special.specialCA.value) + 50)).toFixed(1);
+        estimatedCA.textContent = (CADisplay * (getValue(special,"specialCA") + 50)).toFixed(1);
     } else {
-        estimatedCA.textContent = (CADisplay * Number(special.specialCA.value)).toFixed(1);
+        estimatedCA.textContent = (CADisplay * getValue(special,"specialCA")).toFixed(1);
     }
 }
 function skillCal(){
-    const seraphicTotal = Number(seraphicUp.seraphic.value) + Number(seraphicUp.arcarum.value);
+    const seraphicTotal = getValue(seraphicUp,"seraphic") + getValue(seraphicUp,"arcarum");
     const others = 
-    Number(supUp.primarch.value) +
-    Number(supUp.chara.value) +
-    isChecked("qilinLyre") +
-    isChecked("flammaOrbis")+
-    isChecked("omegaSkill") +
+    getValue(supUp,"primarch") +
+    getValue(supUp,"chara") +
+    isChecked(weaponUp,"qilinLyre") +
+    isChecked(weaponUp,"flammaOrbis")+
+    isChecked(weaponUp,"omegaSkill") +
     handleCommonCap() +
     handleSkill() +
-    Number(otherType.lb.value) +
-    Number(otherType.other.value)/100 +
-    Number(otherType.otherSkill.value)/100;
+    getValue(otherType,"lb") +
+    getValue(otherType,"other")/100 +
+    getValue(otherType,"otherSkill")/100;
     const skillDisplay = (seraphicTotal+1) * (others+1);
     skillCap.textContent = skillDisplay.toFixed(2);
 }
 function CBCal(){
-    const others = handleCB() + Number(otherType.otherCB.value)/100;
+    const others = handleCB() + getValue(otherType,"otherCB")/100;
     const CBDisplay = (others+1);
     CBCap.textContent = CBDisplay.toFixed(2);
     estimatedCB.textContent = (CBDisplay * 170).toFixed(1);
@@ -112,25 +117,25 @@ function CBCal(){
 //==============處理各別上限==============
 function handleCommonCap(){
     let cap = 
-    Number(weaponUp.beast.value) * 0.07 +
-    isChecked("scales") +
-    isChecked("axe") +
-    isChecked("qilinbow") +
-    Number(weaponUp.cosmos.value) *0.01;
+    getValue(weaponUp,"beast") * 0.07 +
+    isChecked(weaponUp,"scales") +
+    isChecked(weaponUp,"axe") +
+    isChecked(weaponUp,"qilinbow") +
+    getValue(weaponUp,"cosmos") *0.01;
     if(cap > 0.2){
         cap = 0.2;
     }
     return cap;
 }
 function handleCA(){
-    let exceedCap = Number(weaponUp.exceedNum.value) * Number(weaponUp.exceed.value);
-    let omegaCap = Number(weaponUp.sentenceoNum.value) * Number(weaponUp.sentenceo.value) * Number(weaponUp.summono.value);
+    let exceedCap = getValue(weaponUp,"exceedNum") * getValue(weaponUp,"exceed");
+    let omegaCap = getValue(weaponUp,"sentenceoNum") * getValue(weaponUp,"sentenceo") * getValue(weaponUp,"summono");
     if(omegaCap > 0.3){
         omegaCap = 0.3;
     }
     let normalCap = 
-    Number(weaponUp.sentenceNum.value) * Number(weaponUp.sentence.value) * Number(weaponUp.summon.value)+
-    Number(weaponUp.glorycaNum.value) * Number(weaponUp.gloryca.value) * Number(weaponUp.summon.value);
+    getValue(weaponUp,"sentenceNum") * getValue(weaponUp,"sentence") * getValue(weaponUp,"summon")+
+    getValue(weaponUp,"glorycaNum") * getValue(weaponUp,"gloryca") * getValue(weaponUp,"summon");
     if(normalCap > 0.3){
         normalCap = 0.3;
     }
@@ -141,11 +146,11 @@ function handleCA(){
     return total;
 }
 function handleSkill(){
-    let artsCap = Number(weaponUp.artsNum.value) * Number(weaponUp.arts.value);
+    let artsCap = getValue(weaponUp,"artsNum") * getValue(weaponUp,"arts");
     if(artsCap > 0.4){
         artsCap = 0.4;
     }
-    let twoSwordCap = isChecked("twoSword");
+    let twoSwordCap = isChecked(weaponUp,"twoSword");
     let total = artsCap + twoSwordCap;
     if(total > 0.4){
         total = 0.4;
@@ -153,9 +158,9 @@ function handleSkill(){
     return total;
 }
 function handleCB(){
-    let chainForceCap = Number(weaponUp.chainForceNum.value) * Number(weaponUp.chainForce.value);
-    let normalCap = Number(weaponUp.glorycbNum.value) * Number(weaponUp.glorycb.value) * Number(weaponUp.summoncb.value);
-    let total = chainForceCap + normalCap + isChecked("kengo") + isChecked("omedgCB");
+    let chainForceCap = getValue(weaponUp,"chainForceNum") * getValue(weaponUp,"chainForce");
+    let normalCap = getValue(weaponUp,"glorycbNum") * getValue(weaponUp,"glorycb") * getValue(weaponUp,"summoncb");
+    let total = chainForceCap + normalCap + isChecked(weaponUp,"kengo") + isChecked(weaponUp,"omedgCB");
     if(total > 0.5){
         total = 0.5;
     }
