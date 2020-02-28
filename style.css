@@ -191,14 +191,14 @@ footer {
 }
 @media (max-width: 540px) {
     header {
-        height: 35px;
+        height: 85px;
         font-size: 1.2em;
         line-height: 1.5em;
         padding-top: 2px;
         padding-bottom: 35px;
     }
     .container {
-        padding-top: 70px;
+        padding-top: 120px;
     }
     summary {
         line-height: 3.2em;
