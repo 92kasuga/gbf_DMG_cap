@@ -10,13 +10,14 @@
 </head>
 <body>
     <header>
-        　普攻上限：<span id="attackCap">1.00</span>倍(預測：<span id="estimatedAttack">44.5</span>萬)｜｜
-        奧義上限：<span id="CACap">1.00</span>倍(預測：<span id="estimatedCA">168.5</span>萬)｜｜
-        技能上限：<span id="skillCap">1.00</span>倍｜｜
-        CB上限：<span id="CBCap">1.00</span>倍(預測：<span id="estimatedCB">170.0</span>萬)
+        　<div class="separate">｜普攻上限：<span id="attackCap">1.00</span>倍(預測：<span id="estimatedAttack">44.5</span>萬)｜</div>
+        <div class="separate">｜奧義上限：<span id="CACap">1.00</span>倍(預測：<span id="estimatedCA">168.5</span>萬)｜</div>
+        <div class="separate">｜技能上限：<span id="skillCap">1.00</span>倍(預測：<span id="estimatedSkill">0.0</span>萬)｜</div>
+        <div class="separate">｜CB上限：<span id="CBCap">1.00</span>倍(預測：<span id="estimatedCB">170</span>萬)｜</div>
     </header>
     <div class="container">
         <section><details><summary>使用範例（闇主天秤盤）</summary><img src="images/example.png"></details></section>
+        <section><details><summary>使用範例2（技能）</summary><img src="images/skill.png"></details></section>
         <section>
             <h4>最終傷害UP（天司類）</h4>
             <form name="seraphicUp" id="seraphicUp">
@@ -111,7 +112,7 @@
                                 <span class="tooltiptext">數量為對應武器的總數</span>
                             </div>                   
                         </td>
-                        <td colspan="2">對應武器一把1%</td><td colspan="3">-</td><td>10%</td>
+                        <td colspan="2">對應武器數×1%</td><td colspan="3">-</td><td>10%</td>
                     </tr>
                     <tr><th class="normal" colspan="9">普攻上限</th></tr>
                     <tr>
@@ -274,7 +275,7 @@
                 <p>
                     【Buff】
                     <label><input name="buff" type="radio" value="0" checked> 無(0%)</label>
-                    <label><input name="buff" type="radio" value="1"> 反骨/追打系(普攻116萬/奧義+50萬)</label>
+                    <label><input name="buff" type="radio" value="1"> 攻擊大幅UP系(普攻116萬/奧義+50萬)</label>
                 </p>
                 <p>
                     <label>其他傷害上限：<input name="other" type="number" min="0" value="0"> %</label>
@@ -304,12 +305,60 @@
             </form>
         </section>
         <section>
+            <h4>技能上限</h4>
+            <form name="redSkill" id="redSkill">
+                <p>＊僅列幾個傷害很兇的技能，其他請洽各大攻略網。＊</p>
+                <p>
+                    <label><input name="chosenSkill" type="radio" value="0" checked> 自訂(<input name="cusSkill" type="number" min="0" value="0"> 萬)</label>
+                    <label><input name="chosenSkill" type="radio" value="42"> 通用Ⅰ (42萬)</label>
+                    <label><input name="chosenSkill" type="radio" value="63"> 通用Ⅱ (63萬)</label><br>
+                    <label><input name="chosenSkill" type="radio" value="112"> 羅貝利亞(112萬)</label>
+                    <label><input name="chosenSkill" type="radio" value="100"> 路西歐(100萬)</label>
+                    <label><input name="chosenSkill" type="radio" value="116"> 夏蕾姆(116萬)</label><br>
+                </p>
+                <p>
+                    <label>連擊數：<input name="hit" type="number" min="1" value="1"> 回</label>
+                </p>
+            </form>
+        </section>
+        <section>
+            <h4>加算固傷</h4>
+            <form name="fixedDamage" id="fixedDamage">
+                <p>
+                    【技能】
+                    <label><input name="fixedDmgA" type="radio" value="0" checked> 無(0萬)</label>
+                    <label><input name="fixedDmgA" type="radio" value="3">  可可蘿(3萬)</label>
+                    <label><input name="fixedDmgA" type="radio" value="5"> 會心(5萬)</label>
+                </p>
+                <p>
+                    【武器】
+                    <label><input name="fixedDmgB" type="radio" value="0" checked> 無(0萬)</label>
+                    <label><input name="fixedDmgB" type="radio" value="3">  虛空武(3萬)</label>
+                </p>
+                <p>
+                    【弱體】
+                    <label><input name="fixedDmgC" type="radio" value="0" checked> 無(0萬)</label>
+                    <label><input name="fixedDmgC" type="radio" value="1">  光雙子召(1萬)</label>
+                    <label><input name="fixedDmgC" type="radio" value="3"> 光銀姊(3萬)</label>
+                </p>
+                <p>
+                    <div class="separate">【加護】
+                    <label><input name="fixedDmgD" type="radio" value="0" checked> 無(0萬)</label>
+                    <label><input name="fixedDmgD" type="radio" value="1.5">  彼列0★(1.5萬)</label>
+                    </div>
+                    <div class="separate">
+                    <label><input name="fixedDmgD" type="radio" value="2"> 彼列3★(2萬)</label>
+                    <label><input name="fixedDmgD" type="radio" value="3"> 彼列4★(3萬)</label></div>
+                </p>
+            </form>
+        </section>
+        <section>
             <h4>補充說明</h4>
             <details>
                 <summary>關於本計算機</summary>
                 <article>
                     <p>計算項目以數值固定的裝備、被動為主，要發動奧義、按技能、疊層、疊T數才有效果的不列，效果量太低、非主流的也不列（比如遠古時代只有5%技能上限的角色武），沒有列出來的項目可利用「其他」分類的自由輸入欄加算。</p>
-                    <p>另外，會心、固傷也不列，畢竟都固傷了心算還比較快，不過之後會考慮整理個效果量列表。</p>
+                    <p>加算固傷一律以最大效果量計算，但是注意某些固傷是有條件的，如敵MAXHP的1%、buff數量、DB數量之類。</p>
                 </article>
             </details>
             <details>
@@ -358,7 +407,7 @@
         </section>
         <footer>
             <button onclick="topBtn()" id="topBtn">TOP</button>
-            <p style="font-size: 0.8em">最後更新：2020/02/16</p>
+            <p style="font-size: 0.8em">最後更新：2020/02/28</p>
         </footer>
     </div>
 <script type="text/javascript" src="main.js"></script>

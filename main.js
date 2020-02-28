@@ -3,6 +3,8 @@ const   seraphicUp = document.querySelector("#seraphicUp"),
         weaponUp = document.querySelector("#weaponUp"),
         otherType = document.querySelector("#otherType"),
         special = document.querySelector("#special"),
+        redSkill= document.querySelector("#redSkill"),
+        fixedDamage= document.querySelector("#fixedDamage"),
         attackCap = document.querySelector("#attackCap"),
         estimatedAttak = document.querySelector("#estimatedAttack"),
         CACap = document.querySelector("#CACap"),
@@ -25,6 +27,12 @@ otherType.addEventListener("change", function(){
     calculate();
 })
 special.addEventListener("change", function(){
+    calculate();
+})
+redSkill.addEventListener("change", function(){
+    calculate();
+})
+fixedDamage.addEventListener("change", function(){
     calculate();
 })
 //回到頁面頂端
@@ -66,9 +74,15 @@ function attackCal(){
     const attackDisplay = (seraphicTotal+1) * (others+1);
     attackCap.textContent = attackDisplay.toFixed(2);
     if (otherType.buff.value == 1){
-        estimatedAttak.textContent = (attackDisplay * 116).toFixed(1);
+        estimatedAttak.textContent = 
+        (attackDisplay * 116 + 
+        (getValue(fixedDamage,"fixedDmgA") + getValue(fixedDamage,"fixedDmgB") + getValue(fixedDamage,"fixedDmgC") + getValue(fixedDamage,"fixedDmgD"))
+        ).toFixed(1);
     } else {
-        estimatedAttak.textContent = (attackDisplay * 44.5).toFixed(1);
+        estimatedAttak.textContent = 
+        (attackDisplay * 44.5 + 
+        (getValue(fixedDamage,"fixedDmgA") + getValue(fixedDamage,"fixedDmgB") + getValue(fixedDamage,"fixedDmgC") + getValue(fixedDamage,"fixedDmgD"))
+        ).toFixed(1);
     }
 }
 function CACal(){
@@ -107,12 +121,24 @@ function skillCal(){
     getValue(otherType,"otherSkill")/100;
     const skillDisplay = (seraphicTotal+1) * (others+1);
     skillCap.textContent = skillDisplay.toFixed(2);
+    if (getValue(redSkill,"chosenSkill") == 0){
+        estimatedSkill.textContent = 
+        (
+        (skillDisplay * getValue(redSkill,"cusSkill") + 
+        (getValue(fixedDamage,"fixedDmgA") + getValue(fixedDamage,"fixedDmgB") + getValue(fixedDamage,"fixedDmgC") + getValue(fixedDamage,"fixedDmgD"))
+        ) * getValue(redSkill,"hit")).toFixed(1);
+    } else {
+        estimatedSkill.textContent =
+        (skillDisplay * getValue(redSkill,"chosenSkill") + 
+        (getValue(fixedDamage,"fixedDmgA") + getValue(fixedDamage,"fixedDmgB") + getValue(fixedDamage,"fixedDmgC") + getValue(fixedDamage,"fixedDmgD"))
+        ).toFixed(1);
+    }
 }
 function CBCal(){
     const others = handleCB() + getValue(otherType,"otherCB")/100;
     const CBDisplay = (others+1);
     CBCap.textContent = CBDisplay.toFixed(2);
-    estimatedCB.textContent = (CBDisplay * 170).toFixed(1);
+    estimatedCB.textContent = (CBDisplay * 170).toFixed(0);
 }
 //==============處理各別上限==============
 function handleCommonCap(){
