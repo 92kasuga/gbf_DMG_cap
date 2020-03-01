@@ -328,58 +328,70 @@
             <form name="fixedDamage" id="fixedDamage">
                 <table>
                     <thead>
-                        <tr><th>預設(無)</th><th>類型</th><th>10k</th><th>15k</th><th>20k</th><th>30k</th><th>50k</th></tr>
+                        <tr><th colspan="2">類型</th><th>預設(無)</th><th>10k</th><th>15k</th><th>20k</th><th>30k</th><th>50k</th></tr>
                     </thead>
                     <tbody>
-                        <tr><th class="attack" colspan="8">buff/sup</th></tr>
                     <tr>
-                        <td rowspan="2"><label><input name="fixedDmgA" type="radio" value="0" checked> </label></td><td>buff</td>
+                        <td class="attack" rowspan="3">強化</td><td>buff</td><td rowspan="2"><label><input name="fixedDmgA" type="radio" value="0" checked> </label></td>
                         <td><label><input name="fixedDmgA" type="radio" value="1"> <span class="writeMode">聖德芬</span></label></td><td>　　　</td><td></td>
                         <td><label><input name="fixedDmgA" type="radio" value="3"> <span class="writeMode">可可蘿</span></label></td>
                         <td><label><input name="fixedDmgA" type="radio" value="5"> <span class="writeMode">會心</span></label></td>
                     </tr>
                     <tr>
-                        <td>sup</td><td></td><td></td>
-                        <td><label><input name="fixedDmgA" type="radio" value="2"> <span class="writeMode">土教官</span></label></td>
-                        <td><label><input name="fixedDmgA" type="radio" value="3"> <span class="writeMode">泳火狐</span></label></td>
-                        <td></td>
+                        <td class="gray">sup</td><td class="gray"></td><td class="gray"></td>
+                        <td class="gray"><label><input name="fixedDmgA" type="radio" value="2"> <span class="writeMode">土教官</span></label></td>
+                        <td class="gray"><label><input name="fixedDmgA" type="radio" value="3"> <span class="writeMode">泳火狐</span></label></td>
+                        <td class="gray"></td>
                     </tr>
                     <tr>
-                        <td><label><input name="fixedDmgS" type="radio" value="0" checked> </label></td><td>蘿賽塔<div class="separate">(泳裝召)</div></td>
+                        <td>蘿賽塔<div class="separate">(泳裝召)</div></td><td><label><input name="fixedDmgS" type="radio" value="0" checked> </label></td>
                         <td><label><input name="fixedDmgS" type="radio" value="1"> ★0</label></td><td></td>
                         <td><label><input name="fixedDmgS" type="radio" value="2"> ★3</label></td><td></td>
                         <td></td>
                     </tr>
-                    <tr><th class="normal" colspan="8">武器</th></tr>
                     <tr>
-                        <td><label><input name="fixedDmgB" type="radio" value="0" checked> </label></td><td>虛空武</td><td></td><td></td><td></td>
-                        <td><label><input name="fixedDmgB" type="radio" value="3"> </label></td>
-                        <td></td>
+                        <td class="normal">武器</td><td class="gray">虛空武</td>
+                        <td class="gray"><label><input name="fixedDmgB" type="radio" value="0" checked> </label></td>
+                        <td class="gray"></td><td class="gray"></td><td class="gray"></td>
+                        <td class="gray"><label><input name="fixedDmgB" type="radio" value="3"> </label></td>
+                        <td class="gray"></td>
                     </tr>
-                    <tr><th class="CA"" colspan="8">加護</th></tr>
                     <tr>
-                        <td><label><input name="fixedDmgC" type="radio" value="0" checked> </label></td><td>彼列</td>
-                        <td></td><td><label><input name="fixedDmgC" type="radio" value="1.5"> ★0</label></td>
+                        <td class="CA">加護</td>
+                        <td>彼列</td>
+                        <td><label><input name="fixedDmgC" type="radio" value="0" checked> </label></td>
+                        <td></td>
+                        <td><label><input name="fixedDmgC" type="radio" value="1.5"> ★0</label></td>
                         <td><label><input name="fixedDmgC" type="radio" value="2"> ★3</label></td>
                         <td><label><input name="fixedDmgC" type="radio" value="3"> ★4</label></td>
                         <td></td>
                     </tr>
-                    <tr><th class="skill" colspan="8">領域</th></tr>
                     <tr>
-                        <td><label><input name="fixedDmgD" type="radio" value="0" checked> </label></td><td>情軍</td>
-                        <td></td><td></td><td></td>
-                        <td><label><input name="fixedDmgD" type="radio" value="3"> </label></td>
-                        <td></td>
+                        <td class="skill">領域</td>
+                        <td class="gray">情軍</td>
+                        <td class="gray"><label><input name="fixedDmgD" type="radio" value="0" checked> </label></td>
+                        <td class="gray"></td><td class="gray"></td><td class="gray"></td>
+                        <td class="gray"><label><input name="fixedDmgD" type="radio" value="3"> </label></td>
+                        <td class="gray"></td>
                     </tr>
-                    <tr><th class="CB" colspan="8">其他</th></tr>
                     <tr>
-                        <td><label><input name="fixedDmgE" type="radio" value="0" checked> </label></td><td>雙子召</td>
+                        <td class="CB" rowspan="3">其他</td>
+                        <td>雙子召</td>
+                        <td><label><input name="fixedDmgE" type="radio" value="0" checked> </label></td>
                         <td><label><input name="fixedDmgE" type="radio" value="1"> </label></td><td></td><td></td><td></td><td></td>
                     </tr>
                     <tr>
-                        <td><label><input name="fixedDmgF" type="radio" value="0" checked> </label></td><td>光銀姊</td>
+                        <td class="gray">光銀姊</td>
+                        <td class="gray"><label><input name="fixedDmgF" type="radio" value="0" checked> </label></td>
+                        <td class="gray"></td><td class="gray"></td><td class="gray"></td>
+                        <td class="gray"><label><input name="fixedDmgF" type="radio" value="3"> </label></td>
+                        <td class="gray"></td>
+                    </tr>
+                    <tr>
+                        <td>零</td>
+                        <td><label><input name="fixedDmgG" type="radio" value="0" checked> </label></td>
                         <td></td><td></td><td></td>
-                        <td><label><input name="fixedDmgF" type="radio" value="3"> </label></td>
+                        <td><label><input name="fixedDmgG" type="radio" value="3"> </label></td>
                         <td></td>
                     </tr>
                     </tbody>

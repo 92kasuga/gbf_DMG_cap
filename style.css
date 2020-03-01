@@ -172,6 +172,9 @@ th {
 .CB {
     background-color: #C3E0D0;
 }
+.gray {
+    background-color: #F5F3F3;
+}
 footer {
     border-top: solid 1px #777;
 }

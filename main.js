@@ -62,6 +62,12 @@ function calculate(){
     CBCal();
 }
 //==============最終上限算式==============
+function fixedDmgSum(){
+    const total = getValue(fixedDamage,"fixedDmgA") + getValue(fixedDamage,"fixedDmgB") + getValue(fixedDamage,"fixedDmgS") +
+    getValue(fixedDamage,"fixedDmgC") + getValue(fixedDamage,"fixedDmgD") + getValue(fixedDamage,"fixedDmgE") + 
+    getValue(fixedDamage,"fixedDmgF") + getValue(fixedDamage,"fixedDmgG");
+    return total;
+}
 function attackCal(){
     const seraphicTotal = getValue(seraphicUp,"seraphic") + getValue(seraphicUp,"arcarum") + getValue(seraphicUp,"otherFinal")/100;
     const others = 
@@ -74,19 +80,9 @@ function attackCal(){
     const attackDisplay = (seraphicTotal+1) * (others+1);
     attackCap.textContent = attackDisplay.toFixed(2);
     if (otherType.buff.value == 1){
-        estimatedAttak.textContent = 
-        (attackDisplay * 116 + 
-        (getValue(fixedDamage,"fixedDmgA") + getValue(fixedDamage,"fixedDmgB") + getValue(fixedDamage,"fixedDmgS") +
-        getValue(fixedDamage,"fixedDmgC") + getValue(fixedDamage,"fixedDmgD") +
-        getValue(fixedDamage,"fixedDmgE") + getValue(fixedDamage,"fixedDmgF"))
-        ).toFixed(1);
+        estimatedAttak.textContent = (attackDisplay * 116 + fixedDmgSum()).toFixed(1);
     } else {
-        estimatedAttak.textContent = 
-        (attackDisplay * 44.5 + 
-        (getValue(fixedDamage,"fixedDmgA") + getValue(fixedDamage,"fixedDmgB") + getValue(fixedDamage,"fixedDmgS") +
-        getValue(fixedDamage,"fixedDmgC") + getValue(fixedDamage,"fixedDmgD") +
-        getValue(fixedDamage,"fixedDmgE") + getValue(fixedDamage,"fixedDmgF"))
-        ).toFixed(1);
+        estimatedAttak.textContent = (attackDisplay * 44.5 + fixedDmgSum()).toFixed(1);
     }
 }
 function CACal(){
@@ -127,19 +123,9 @@ function skillCal(){
     skillCap.textContent = skillDisplay.toFixed(2);
     if (getValue(redSkill,"chosenSkill") == 0){
         estimatedSkill.textContent = 
-        (
-        (skillDisplay * getValue(redSkill,"cusSkill") + 
-        (getValue(fixedDamage,"fixedDmgA") + getValue(fixedDamage,"fixedDmgB") + getValue(fixedDamage,"fixedDmgS") +
-        getValue(fixedDamage,"fixedDmgC") + getValue(fixedDamage,"fixedDmgD") +
-        getValue(fixedDamage,"fixedDmgE") + getValue(fixedDamage,"fixedDmgF"))
-        ) * getValue(redSkill,"hit")).toFixed(1);
+        ((skillDisplay * getValue(redSkill,"cusSkill") + fixedDmgSum()) * getValue(redSkill,"hit")).toFixed(1);
     } else {
-        estimatedSkill.textContent =
-        (skillDisplay * getValue(redSkill,"chosenSkill") + 
-        (getValue(fixedDamage,"fixedDmgA") + getValue(fixedDamage,"fixedDmgB") + getValue(fixedDamage,"fixedDmgS") +
-        getValue(fixedDamage,"fixedDmgC") + getValue(fixedDamage,"fixedDmgD") +
-        getValue(fixedDamage,"fixedDmgE") + getValue(fixedDamage,"fixedDmgF"))
-        ).toFixed(1);
+        estimatedSkill.textContent =(skillDisplay * getValue(redSkill,"chosenSkill") + fixedDmgSum()).toFixed(1);
     }
 }
 function CBCal(){
