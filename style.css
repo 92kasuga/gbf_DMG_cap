@@ -190,15 +190,24 @@ footer {
     cursor:pointer;
 }
 @media (max-width: 540px) {
+    body{
+        font-size: 1.2em;
+    }
+    p{
+        margin: 0.7em;
+    }
     header {
         height: 85px;
-        font-size: 1.2em;
         line-height: 1.5em;
         padding-top: 2px;
         padding-bottom: 35px;
     }
+    .writeMode{
+        -webkit-writing-mode: vertical-lr;
+        writing-mode: vertical-lr
+    }
     .container {
-        padding-top: 120px;
+        padding-top: 122px;
     }
     summary {
         line-height: 3.2em;

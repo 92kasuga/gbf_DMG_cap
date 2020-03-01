@@ -22,11 +22,12 @@
             <h4>最終傷害UP（天司類）</h4>
             <form name="seraphicUp" id="seraphicUp">
             <p>
-            【天司武】
+            <div class="separate">【天司武】
             <label><input name="seraphic" type="radio" value="0" checked> 無(0%)</label>
             <label><input name="seraphic" type="radio" value="0.1"> SR(10%)</label>
+            </div><div class="separate">
             <label><input name="seraphic" type="radio" value="0.2"> SSR3★(20%)</label>
-            <label><input name="seraphic" type="radio" value="0.23"> 4★(23%)</label>
+            <label><input name="seraphic" type="radio" value="0.23"> 4★(23%)</label></div>
             </p>
             <p>
             <div class="separate">【塔羅召喚】
@@ -59,7 +60,7 @@
             <p>
             【角色—奧上】
             <label><input name="charaCA" type="radio" value="0" checked> 無(0%)</label>
-            <label><input name="charaCA" type="radio" value="0.1"> lv90劍王(10%)</label>
+            <label><input name="charaCA" type="radio" value="0.1"> lv90劍王/天網の星眼(10%)</label>
             </p>
             </form>
         </section>
@@ -67,11 +68,12 @@
             <h4>上限UP類（武器）</h4>
             <form name="weaponUp" id="weaponUp">
                 <table>
-                    <tr><th class="attack" colspan="9">傷害上限</th></tr>
+                    
                     <thead>
                         <tr><th>數量</th><th>類型</th><th>slv10</th><th>slv15</th><th colspan="3">召喚加護</th><th colspan="2">效果上限</th></tr>
                     </thead>
                     <tbody>
+                    <tr><th class="attack" colspan="9">傷害上限</th></tr>
                     <tr>
                         <td>
                             <select name="beast">
@@ -80,13 +82,13 @@
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                             </select>
-                        </td><td>四象．邪/其他</td>
+                        </td><td>四象/其他</td>
                         <td colspan="2">7%</td><td colspan="3">-</td><td>20%</td><td rowspan="5">20%</td>
                     </tr>
                         <td><label class="checkbox"><input name="scales" type="checkbox" value="0.1"><i class="style"></i></label></td><td>天秤</td>
                         <td colspan="2">條件10%</td><td colspan="3">-</td><td>-</td>
                     </tr>
-                        <td><label class="checkbox"><input name="axe" type="checkbox" value="0.1"><i class="style"></i></label></td><td>英雄王戰斧</td>
+                        <td><label class="checkbox"><input name="axe" type="checkbox" value="0.1"><i class="style"></i></label></td><td>英雄王斧</td>
                         <td colspan="2">條件10%</td><td colspan="3">-</td><td>-</td>
                     </tr>
                         <td><label class="checkbox"><input name="qilinbow"" type="checkbox" value="0.1"><i class="style"></i></label></td><td>麒麟弓</td>
@@ -116,7 +118,7 @@
                     </tr>
                     <tr><th class="normal" colspan="9">普攻上限</th></tr>
                     <tr>
-                        <td><label class="checkbox"><input name="omegaAttack"" type="checkbox" value="0.1"><i class="style"></i></label></td><td>U武/終末神器</td>
+                        <td><label class="checkbox"><input name="omegaAttack"" type="checkbox" value="0.1"><i class="style"></i></label></td><td>U武/終末</td>
                         <td colspan="2">10%</td><td colspan="3">-</td><td>-</td><td>10%</td>
                     </tr>
                     <tr><th class="CA" colspan="9">奧義上限</th></tr>
@@ -185,7 +187,7 @@
                         <td colspan="2">20%</td><td colspan="3">-</td><td>-</td><td>20%</td>
                     </tr>
                     <tr>
-                        <td><label class="checkbox"><input name="omegaCA" type="checkbox" value="0.15"><i class="style"></i></label></td><td>U武/終末神器</td>
+                        <td><label class="checkbox"><input name="omegaCA" type="checkbox" value="0.15"><i class="style"></i></label></td><td>U武/終末</td>
                         <td colspan="2">15%</td><td colspan="3">-</td><td>-</td><td>15%</td>
                     </tr>
                     <tr><th class="skill" colspan="9">技能上限</th></tr>
@@ -220,7 +222,7 @@
                         <td colspan="2">20%</td><td colspan="3">-</td><td>-</td><td>20%</td>
                     </tr>
                     <tr>
-                        <td><label class="checkbox"><input name="omegaSkill" type="checkbox" value="0.5"><i class="style"></i></label><td>U武/終末神器</td>
+                        <td><label class="checkbox"><input name="omegaSkill" type="checkbox" value="0.5"><i class="style"></i></label><td>U武/終末</td>
                         <td colspan="2">50%</td><td colspan="3">-</td><td>-</td><td>50%</td>
                     </tr>
                     <tr><th class="CB" colspan="9">CB上限</th></tr>
@@ -256,7 +258,7 @@
                         <td colspan="2">30%</td><td colspan="3">-</td><td>-</td>
                     </tr>
                     <tr>
-                        <td><label class="checkbox"><input name="omedgCB" type="checkbox" value="0.5"><i class="style"></i></label><td>U武/終末神器</td>
+                        <td><label class="checkbox"><input name="omedgCB" type="checkbox" value="0.5"><i class="style"></i></label><td>U武/終末</td>
                         <td colspan="2">50%</td><td colspan="3">-</td><td>-</td>
                     </tr>
                     </tbody>
@@ -324,32 +326,64 @@
         <section>
             <h4>加算固傷</h4>
             <form name="fixedDamage" id="fixedDamage">
-                <p>
-                    【技能】
-                    <label><input name="fixedDmgA" type="radio" value="0" checked> 無(0萬)</label>
-                    <label><input name="fixedDmgA" type="radio" value="3">  可可蘿(3萬)</label>
-                    <label><input name="fixedDmgA" type="radio" value="5"> 會心(5萬)</label>
-                </p>
-                <p>
-                    【武器】
-                    <label><input name="fixedDmgB" type="radio" value="0" checked> 無(0萬)</label>
-                    <label><input name="fixedDmgB" type="radio" value="3">  虛空武(3萬)</label>
-                </p>
-                <p>
-                    【弱體】
-                    <label><input name="fixedDmgC" type="radio" value="0" checked> 無(0萬)</label>
-                    <label><input name="fixedDmgC" type="radio" value="1">  光雙子召(1萬)</label>
-                    <label><input name="fixedDmgC" type="radio" value="3"> 光銀姊(3萬)</label>
-                </p>
-                <p>
-                    <div class="separate">【加護】
-                    <label><input name="fixedDmgD" type="radio" value="0" checked> 無(0萬)</label>
-                    <label><input name="fixedDmgD" type="radio" value="1.5">  彼列0★(1.5萬)</label>
-                    </div>
-                    <div class="separate">
-                    <label><input name="fixedDmgD" type="radio" value="2"> 彼列3★(2萬)</label>
-                    <label><input name="fixedDmgD" type="radio" value="3"> 彼列4★(3萬)</label></div>
-                </p>
+                <table>
+                    <thead>
+                        <tr><th>預設(無)</th><th>類型</th><th>10k</th><th>15k</th><th>20k</th><th>30k</th><th>50k</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th class="attack" colspan="8">buff/sup</th></tr>
+                    <tr>
+                        <td rowspan="2"><label><input name="fixedDmgA" type="radio" value="0" checked> </label></td><td>buff</td>
+                        <td><label><input name="fixedDmgA" type="radio" value="1"> <span class="writeMode">聖德芬</span></label></td><td>　　　</td><td></td>
+                        <td><label><input name="fixedDmgA" type="radio" value="3"> <span class="writeMode">可可蘿</span></label></td>
+                        <td><label><input name="fixedDmgA" type="radio" value="5"> <span class="writeMode">會心</span></label></td>
+                    </tr>
+                    <tr>
+                        <td>sup</td><td></td><td></td>
+                        <td><label><input name="fixedDmgA" type="radio" value="2"> <span class="writeMode">土教官</span></label></td>
+                        <td><label><input name="fixedDmgA" type="radio" value="3"> <span class="writeMode">泳火狐</span></label></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><label><input name="fixedDmgS" type="radio" value="0" checked> </label></td><td>蘿賽塔<div class="separate">(泳裝召)</div></td>
+                        <td><label><input name="fixedDmgS" type="radio" value="1"> ★0</label></td><td></td>
+                        <td><label><input name="fixedDmgS" type="radio" value="2"> ★3</label></td><td></td>
+                        <td></td>
+                    </tr>
+                    <tr><th class="normal" colspan="8">武器</th></tr>
+                    <tr>
+                        <td><label><input name="fixedDmgB" type="radio" value="0" checked> </label></td><td>虛空武</td><td></td><td></td><td></td>
+                        <td><label><input name="fixedDmgB" type="radio" value="3"> </label></td>
+                        <td></td>
+                    </tr>
+                    <tr><th class="CA"" colspan="8">加護</th></tr>
+                    <tr>
+                        <td><label><input name="fixedDmgC" type="radio" value="0" checked> </label></td><td>彼列</td>
+                        <td></td><td><label><input name="fixedDmgC" type="radio" value="1.5"> ★0</label></td>
+                        <td><label><input name="fixedDmgC" type="radio" value="2"> ★3</label></td>
+                        <td><label><input name="fixedDmgC" type="radio" value="3"> ★4</label></td>
+                        <td></td>
+                    </tr>
+                    <tr><th class="skill" colspan="8">領域</th></tr>
+                    <tr>
+                        <td><label><input name="fixedDmgD" type="radio" value="0" checked> </label></td><td>情軍</td>
+                        <td></td><td></td><td></td>
+                        <td><label><input name="fixedDmgD" type="radio" value="3"> </label></td>
+                        <td></td>
+                    </tr>
+                    <tr><th class="CB" colspan="8">其他</th></tr>
+                    <tr>
+                        <td><label><input name="fixedDmgE" type="radio" value="0" checked> </label></td><td>雙子召</td>
+                        <td><label><input name="fixedDmgE" type="radio" value="1"> </label></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td><label><input name="fixedDmgF" type="radio" value="0" checked> </label></td><td>光銀姊</td>
+                        <td></td><td></td><td></td>
+                        <td><label><input name="fixedDmgF" type="radio" value="3"> </label></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
             </form>
         </section>
         <section>
@@ -357,8 +391,10 @@
             <details>
                 <summary>關於本計算機</summary>
                 <article>
-                    <p>計算項目以數值固定的裝備、被動為主，要發動奧義、按技能、疊層、疊T數才有效果的不列，效果量太低、非主流的也不列（比如遠古時代只有5%技能上限的角色武），沒有列出來的項目可利用「其他」分類的自由輸入欄加算。</p>
-                    <p>加算固傷一律以最大效果量計算，但是注意某些固傷是有條件的，如敵MAXHP的1%、buff數量、DB數量之類。</p>
+                    <p>【計算項目】<br>計算項目以數值固定的裝備、被動為主，要發動奧義、按技能、疊層、疊T數等等不能常駐效果的不列，效果量太低、非主流的也不列（比如遠古時代只有5%技能上限的角色武），沒有列出來的項目可利用「其他」分類的自由輸入欄加算。</p>
+                    <p>【固傷】<br>加算固傷一律以達成條件的最大效果量計算，要注意固傷的條件有很多種，如敵MAXHP的1%、給予傷害的xx%、buff數量、DB數量之類。<br>
+                    目前參照wiki的分法分為五大類，buff和sup多項不疊加，兩類中效果取高。但可可蘿的一技和泳火狐的被動卻能疊加，考慮到大概不會有兩隻一起放的情況，這邊就忽略不計了。
+                    </p>
                 </article>
             </details>
             <details>
@@ -367,7 +403,7 @@
                     <p>遊戲中跟上限有關的敘述，大致能這樣區分：</p>
                     <p>ダメージ上限UP：提高傷害上限。</p>
                     <p>与ダメージUP：最終傷害乘算=天司類增傷。</p>
-                    <p>与ダメージ上昇：最終加算的固定傷害。(e.g.虛空武)</p>
+                    <p>与ダメージ上昇：最終加算的固定傷害。</p>
                     <p>當最終乘算與最終加算同時存在時，先乘算後才加算固傷。</p>
                 </article>
             </details>
@@ -407,7 +443,7 @@
         </section>
         <footer>
             <button onclick="topBtn()" id="topBtn">TOP</button>
-            <p style="font-size: 0.8em">最後更新：2020/02/28</p>
+            <p style="font-size: 0.8em">最後更新：2020/03/01</p>
         </footer>
     </div>
 <script type="text/javascript" src="main.js"></script>
