@@ -118,8 +118,12 @@
                     </tr>
                     <tr><th class="normal" colspan="9">普攻上限</th></tr>
                     <tr>
-                        <td><label class="checkbox"><input name="omegaAttack"" type="checkbox" value="0.1"><i class="style"></i></label></td><td>U武/終末</td>
-                        <td colspan="2">10%</td><td colspan="3">-</td><td>-</td><td>10%</td>
+                        <td><label class="checkbox"><input name="astralAttack" type="checkbox" value="0.1" onclick="cancel(this)"><i class="style"></i></label></td><td>主手星幽</td>
+                        <td colspan="2">條件10%</td><td colspan="3">-</td><td>-</td><td rowspan="2">10%</td>
+                    </tr>
+                    <tr>
+                        <td><label class="checkbox"><input name="omegaAttack" type="checkbox" value="0.1"><i class="style"></i></label></td><td>U武/終末</td>
+                        <td colspan="2">10%</td><td colspan="3">-</td><td>-</td>
                     </tr>
                     <tr><th class="CA" colspan="9">奧義上限</th></tr>
                     <tr>
@@ -183,7 +187,7 @@
                         <td><label><input name="gloryca" type="radio" value="0.068" checked>6.8%</label></td>
                     </tr>
                     <tr>
-                        <td><label class="checkbox"><input name="huanglong" type="checkbox" value="0.2"><i class="style"></i></label></td><td>主手黃龍槍</td>
+                        <td><label class="checkbox"><input name="huanglong" type="checkbox" value="0.2" onclick="cancel(this)"><i class="style"></i></label></td><td>主手黃龍槍</td>
                         <td colspan="2">20%</td><td colspan="3">-</td><td>-</td><td>20%</td>
                     </tr>
                     <tr>
@@ -205,7 +209,7 @@
                         <td colspan="3">-</td><td>40%</td><td rowspan="2">40%</td>
                     </tr>
                     <tr>
-                        <td><label class="checkbox"><input name="twoSword" type="checkbox" value="0.1"><i class="style"></i></label>
+                        <td><label class="checkbox"><input name="twoSword" type="checkbox" value="0.1" onclick="cancel(this)"><i class="style"></i></label>
                         <td>
                             <div class="tooltip">雙劍術<img src="images/hint.png">
                                 <span class="tooltiptext s">4★職武技能</span>
@@ -214,16 +218,20 @@
                         <td colspan="2">主角10%</td><td colspan="3">-</td><td>-</td>
                     </tr>
                     <tr>
-                        <td><label class="checkbox"><input name="flammaOrbis" type="checkbox" value="0.3"><i class="style"></i></label><td>主手六道銃</td>
+                        <td><label class="checkbox"><input name="flammaOrbis" type="checkbox" value="0.3" onclick="cancel(this)"><i class="style"></i></label><td>主手六道銃</td>
                         <td colspan="2">條件30%</td><td colspan="3">-</td><td>-</td><td>30%</td>
                     </tr>
                     <tr>
-                        <td><label class="checkbox"><input name="qilinLyre" type="checkbox" value="0.2"><i class="style"></i></label><td>主手麒麟弦</td>
+                        <td><label class="checkbox"><input name="qilinLyre" type="checkbox" value="0.2" onclick="cancel(this)"><i class="style"></i></label><td>主手麒麟弦</td>
                         <td colspan="2">20%</td><td colspan="3">-</td><td>-</td><td>20%</td>
                     </tr>
                     <tr>
+                        <td><label class="checkbox"><input name="astralSkill" type="checkbox" value="0.5" onclick="cancel(this)"><i class="style"></i></label><td>主手星幽</td>
+                        <td colspan="2">最大50%</td><td colspan="3">-</td><td>-</td><td rowspan="2">50%</td>
+                    </tr>
+                    <tr>
                         <td><label class="checkbox"><input name="omegaSkill" type="checkbox" value="0.5"><i class="style"></i></label><td>U武/終末</td>
-                        <td colspan="2">50%</td><td colspan="3">-</td><td>-</td><td>50%</td>
+                        <td colspan="2">50%</td><td colspan="3">-</td><td>-</td>
                     </tr>
                     <tr><th class="CB" colspan="9">CB上限</th></tr>
                     <tr>
@@ -254,7 +262,7 @@
                         <td>50%</td>
                     </tr>
                     <tr>
-                        <td><label class="checkbox"><input name="kengo" type="checkbox" value="0.3"><i class="style"></i></label><td>劍豪．英勇</td>
+                        <td><label class="checkbox"><input name="kengo" type="checkbox" value="0.3" onclick="cancel(this)"><i class="style"></i></label><td>劍豪．英勇</td>
                         <td colspan="2">30%</td><td colspan="3">-</td><td>-</td>
                     </tr>
                     <tr>
@@ -332,66 +340,66 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td class="attack" rowspan="3">強化</td><td>buff</td><td rowspan="2"><label><input name="fixedDmgA" type="radio" value="0" checked> </label></td>
-                        <td><label><input name="fixedDmgA" type="radio" value="1"> <span class="writeMode">聖德芬</span></label></td><td>　　　</td><td></td>
-                        <td><label><input name="fixedDmgA" type="radio" value="3"> <span class="writeMode">可可蘿</span></label></td>
-                        <td><label><input name="fixedDmgA" type="radio" value="5"> <span class="writeMode">會心</span></label></td>
+                        <td class="attack" rowspan="3">強化</td><td>技能</td><td rowspan="2"><label><input name="buffDmg" type="radio" value="0" checked> </label></td>
+                        <td><label><input name="buffDmg" type="radio" value="1"> <span class="writeMode">聖德芬</span></label></td><td>　　　</td><td></td>
+                        <td><label><input name="buffDmg" type="radio" value="3"> <span class="writeMode">可可蘿</span></label></td>
+                        <td><label><input name="buffDmg" type="radio" value="5"> <span class="writeMode">會心</span></label></td>
                     </tr>
                     <tr>
-                        <td class="gray">sup</td><td class="gray"></td><td class="gray"></td>
-                        <td class="gray"><label><input name="fixedDmgA" type="radio" value="2"> <span class="writeMode">土教官</span></label></td>
-                        <td class="gray"><label><input name="fixedDmgA" type="radio" value="3"> <span class="writeMode">泳火狐</span></label></td>
+                        <td class="gray">被動</td><td class="gray"></td><td class="gray"></td>
+                        <td class="gray"><label><input name="buffDmg" type="radio" value="2"> <span class="writeMode">土教官</span></label></td>
+                        <td class="gray"><label><input name="buffDmg" type="radio" value="3"> <span class="writeMode">泳火狐</span></label></td>
                         <td class="gray"></td>
                     </tr>
                     <tr>
-                        <td>蘿賽塔<div class="separate">(泳裝召)</div></td><td><label><input name="fixedDmgS" type="radio" value="0" checked> </label></td>
-                        <td><label><input name="fixedDmgS" type="radio" value="1"> ★0</label></td><td></td>
-                        <td><label><input name="fixedDmgS" type="radio" value="2"> ★3</label></td><td></td>
+                        <td>蘿賽塔<div class="separate">(泳裝召)</div></td><td><label><input name="specialBuffDmg" type="radio" value="0" checked> </label></td>
+                        <td><label><input name="specialBuffDmg" type="radio" value="1"> ★0</label></td><td></td>
+                        <td><label><input name="specialBuffDmg" type="radio" value="2"> ★3</label></td><td></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="normal">武器</td><td class="gray">虛空武</td>
-                        <td class="gray"><label><input name="fixedDmgB" type="radio" value="0" checked> </label></td>
+                        <td class="gray"><label><input name="weaponDmg" type="radio" value="0" checked> </label></td>
                         <td class="gray"></td><td class="gray"></td><td class="gray"></td>
-                        <td class="gray"><label><input name="fixedDmgB" type="radio" value="3"> </label></td>
+                        <td class="gray"><label><input name="weaponDmg" type="radio" value="3"> </label></td>
                         <td class="gray"></td>
                     </tr>
                     <tr>
                         <td class="CA">加護</td>
                         <td>彼列</td>
-                        <td><label><input name="fixedDmgC" type="radio" value="0" checked> </label></td>
+                        <td><label><input name="subDmg" type="radio" value="0" checked> </label></td>
                         <td></td>
-                        <td><label><input name="fixedDmgC" type="radio" value="1.5"> ★0</label></td>
-                        <td><label><input name="fixedDmgC" type="radio" value="2"> ★3</label></td>
-                        <td><label><input name="fixedDmgC" type="radio" value="3"> ★4</label></td>
+                        <td><label><input name="subDmg" type="radio" value="1.5"> ★0</label></td>
+                        <td><label><input name="subDmg" type="radio" value="2"> ★3</label></td>
+                        <td><label><input name="subDmg" type="radio" value="3"> ★4</label></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="skill">領域</td>
                         <td class="gray">情軍</td>
-                        <td class="gray"><label><input name="fixedDmgD" type="radio" value="0" checked> </label></td>
+                        <td class="gray"><label><input name="fieldDmg" type="radio" value="0" checked> </label></td>
                         <td class="gray"></td><td class="gray"></td><td class="gray"></td>
-                        <td class="gray"><label><input name="fixedDmgD" type="radio" value="3"> </label></td>
+                        <td class="gray"><label><input name="fieldDmg" type="radio" value="3"> </label></td>
                         <td class="gray"></td>
                     </tr>
                     <tr>
                         <td class="CB" rowspan="3">其他</td>
                         <td>雙子召</td>
-                        <td><label><input name="fixedDmgE" type="radio" value="0" checked> </label></td>
-                        <td><label><input name="fixedDmgE" type="radio" value="1"> </label></td><td></td><td></td><td></td><td></td>
+                        <td><label><input name="everbaneDmg" type="radio" value="0" checked> </label></td>
+                        <td><label><input name="everbaneDmg" type="radio" value="1"> </label></td><td></td><td></td><td></td><td></td>
                     </tr>
                     <tr>
                         <td class="gray">光銀姊</td>
-                        <td class="gray"><label><input name="fixedDmgF" type="radio" value="0" checked> </label></td>
+                        <td class="gray"><label><input name="silvaDmg" type="radio" value="0" checked> </label></td>
                         <td class="gray"></td><td class="gray"></td><td class="gray"></td>
-                        <td class="gray"><label><input name="fixedDmgF" type="radio" value="3"> </label></td>
+                        <td class="gray"><label><input name="silvaDmg" type="radio" value="3"> </label></td>
                         <td class="gray"></td>
                     </tr>
                     <tr>
                         <td>零</td>
-                        <td><label><input name="fixedDmgG" type="radio" value="0" checked> </label></td>
+                        <td><label><input name="reiDmg" type="radio" value="0" checked> </label></td>
                         <td></td><td></td><td></td>
-                        <td><label><input name="fixedDmgG" type="radio" value="3"> </label></td>
+                        <td><label><input name="reiDmg" type="radio" value="3"> </label></td>
                         <td></td>
                     </tr>
                     </tbody>
@@ -405,7 +413,7 @@
                 <article>
                     <p>【計算項目】<br>計算項目以數值固定的裝備、被動為主，要發動奧義、按技能、疊層、疊T數等等不能常駐效果的不列，效果量太低、非主流的也不列（比如遠古時代只有5%技能上限的角色武），沒有列出來的項目可利用「其他」分類的自由輸入欄加算。</p>
                     <p>【固傷】<br>加算固傷一律以達成條件的最大效果量計算，要注意固傷的條件有很多種，如敵MAXHP的1%、給予傷害的xx%、buff數量、DB數量之類。<br>
-                    目前參照wiki的分法分為五大類，buff和sup多項不疊加，兩類中效果取高。但可可蘿的一技和泳火狐的被動卻能疊加，考慮到大概不會有兩隻一起放的情況，這邊就忽略不計了。
+                    目前參照wiki的分法分為五大類，技能和被動多項不疊加，兩類中效果取高。但可可蘿的一技和泳火狐的被動卻能疊加，考慮到大概不會有兩隻一起放的情況，這邊就忽略不計了。
                     </p>
                 </article>
             </details>
@@ -437,6 +445,7 @@
                             <li>斯坦&阿莉莎三技(10%)</li>
                             <li>聖誕繆昂被動(50%)</li>
                             <li>火黑道狐二技(10%)</li>
+                            <li>星幽斧奧義(10%)</li>
                         </ul>
                     </p>
                 </article>
@@ -455,7 +464,7 @@
         </section>
         <footer>
             <button onclick="topBtn()" id="topBtn">TOP</button>
-            <p style="font-size: 0.8em">最後更新：2020/03/01</p>
+            <p style="font-size: 0.8em">最後更新：2020/03/03</p>
         </footer>
     </div>
 <script type="text/javascript" src="main.js"></script>

@@ -212,6 +212,12 @@ footer {
     .container {
         padding-top: 122px;
     }
+    .tooltip .tooltiptext {
+        width: 160px;
+    }
+    .tooltip .s {
+        width: 90px;
+    }
     summary {
         line-height: 3.2em;
     }

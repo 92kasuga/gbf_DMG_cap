@@ -61,11 +61,24 @@ function calculate(){
     skillCal();
     CBCal();
 }
+//主手修正
+function cancel(input){
+    if(input.checked == true){
+        weaponUp[name= "astralAttack"].checked = false;
+        weaponUp[name= "huanglong"].checked = false;
+        weaponUp[name= "twoSword"].checked = false;
+        weaponUp[name= "flammaOrbis"].checked = false;
+        weaponUp[name= "qilinLyre"].checked = false;
+        weaponUp[name= "astralSkill"].checked = false;
+        weaponUp[name= "kengo"].checked = false;
+        input.checked= true;
+    }
+}
 //==============最終上限算式==============
 function fixedDmgSum(){
-    const total = getValue(fixedDamage,"fixedDmgA") + getValue(fixedDamage,"fixedDmgB") + getValue(fixedDamage,"fixedDmgS") +
-    getValue(fixedDamage,"fixedDmgC") + getValue(fixedDamage,"fixedDmgD") + getValue(fixedDamage,"fixedDmgE") + 
-    getValue(fixedDamage,"fixedDmgF") + getValue(fixedDamage,"fixedDmgG");
+    const total = getValue(fixedDamage,"buffDmg") + getValue(fixedDamage,"weaponDmg") + getValue(fixedDamage,"specialBuffDmg") +
+    getValue(fixedDamage,"subDmg") + getValue(fixedDamage,"fieldDmg") + getValue(fixedDamage,"everbaneDmg") + 
+    getValue(fixedDamage,"silvaDmg") + getValue(fixedDamage,"reiDmg");
     return total;
 }
 function attackCal(){
@@ -73,8 +86,8 @@ function attackCal(){
     const others = 
     getValue(supUp,"primarch") +
     getValue(supUp,"chara") +
-    isChecked(weaponUp,"omegaAttack") +
     handleCommonCap() +
+    handleAttack() +
     getValue(otherType,"lb") +
     getValue(otherType,"other")/100;
     const attackDisplay = (seraphicTotal+1) * (others+1);
@@ -113,7 +126,6 @@ function skillCal(){
     getValue(supUp,"chara") +
     isChecked(weaponUp,"qilinLyre") +
     isChecked(weaponUp,"flammaOrbis")+
-    isChecked(weaponUp,"omegaSkill") +
     handleCommonCap() +
     handleSkill() +
     getValue(otherType,"lb") +
@@ -147,6 +159,13 @@ function handleCommonCap(){
     }
     return cap;
 }
+function handleAttack(){
+    let total = isChecked(weaponUp,"astralAttack") + isChecked(weaponUp,"omegaAttack");
+    if(total > 0.1){
+        total = 0.1;
+    }
+    return total;
+}
 function handleCA(){
     let exceedCap = getValue(weaponUp,"exceedNum") * getValue(weaponUp,"exceed");
     let omegaCap = getValue(weaponUp,"sentenceoNum") * getValue(weaponUp,"sentenceo") * getValue(weaponUp,"summono");
@@ -171,10 +190,15 @@ function handleSkill(){
         artsCap = 0.4;
     }
     let twoSwordCap = isChecked(weaponUp,"twoSword");
-    let total = artsCap + twoSwordCap;
-    if(total > 0.4){
-        total = 0.4;
+    let totalA = artsCap + twoSwordCap;
+    if(totalA > 0.4){
+        totalA = 0.4;
     }
+    let totalB = isChecked(weaponUp,"astralSkill") + isChecked(weaponUp,"omegaSkill");
+    if(totalB > 0.5){
+        totalB = 0.5;
+    }
+    let total = totalA + totalB;
     return total;
 }
 function handleCB(){
