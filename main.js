@@ -114,9 +114,9 @@ function CACal(){
     const CADisplay = (seraphicTotal+1) * (others+1);
     CACap.textContent = CADisplay.toFixed(2);
     if (otherType.buff.value == 1){
-        estimatedCA.textContent = (CADisplay * (getValue(special,"specialCA") + 50)).toFixed(1);
+        estimatedCA.textContent = (CADisplay * (getValue(special,"specialCA") + 50) + fixedDmgSum()).toFixed(1);
     } else {
-        estimatedCA.textContent = (CADisplay * getValue(special,"specialCA")).toFixed(1);
+        estimatedCA.textContent = (CADisplay * getValue(special,"specialCA") + fixedDmgSum()).toFixed(1);
     }
 }
 function skillCal(){

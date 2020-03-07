@@ -44,7 +44,7 @@
             </form>
         </section>
         <section>
-            <h4>上限UP類（SUP）</h4>
+            <h4>上限UP類（被動）</h4>
             <form name="supUp" id="supUp">
             <p>
             【天司召喚】
@@ -118,7 +118,7 @@
                     </tr>
                     <tr><th class="normal" colspan="9">普攻上限</th></tr>
                     <tr>
-                        <td><label class="checkbox"><input name="astralAttack" type="checkbox" value="0.1" onclick="cancel(this)"><i class="style"></i></label></td><td>主手星幽</td>
+                        <td><label class="checkbox"><input name="astralAttack" type="checkbox" value="0.1" onclick="cancel(this)"><i class="style"></i></label></td><td>主手星幽武</td>
                         <td colspan="2">條件10%</td><td colspan="3">-</td><td>-</td><td rowspan="2">10%</td>
                     </tr>
                     <tr>
@@ -226,7 +226,7 @@
                         <td colspan="2">20%</td><td colspan="3">-</td><td>-</td><td>20%</td>
                     </tr>
                     <tr>
-                        <td><label class="checkbox"><input name="astralSkill" type="checkbox" value="0.5" onclick="cancel(this)"><i class="style"></i></label><td>主手星幽</td>
+                        <td><label class="checkbox"><input name="astralSkill" type="checkbox" value="0.5" onclick="cancel(this)"><i class="style"></i></label><td>主手星幽武</td>
                         <td colspan="2">最大50%</td><td colspan="3">-</td><td>-</td><td rowspan="2">50%</td>
                     </tr>
                     <tr>
@@ -416,10 +416,11 @@
             <details>
                 <summary>關於本計算機</summary>
                 <article>
-                    <p>【計算項目】<br>計算項目以數值固定的裝備、被動為主，要發動奧義、按技能、疊層、疊T數等等不能常駐效果的不列，效果量太低、非主流的也不列（比如遠古時代只有5%技能上限的角色武），沒有列出來的項目可利用「其他」分類的自由輸入欄加算。</p>
-                    <p>【固傷】<br>加算固傷一律以達成條件的最大效果量計算，要注意固傷的條件有很多種，如敵MAXHP的1%、給予傷害的xx%、buff數量、DB數量之類。<br>
-                    目前參照wiki的分法分為五大類，技能和被動多項不疊加，兩類中效果取高。但可可蘿的一技和泳火狐的被動卻能疊加，考慮到大概不會有兩隻一起放的情況，這邊就忽略不計了。
-                    </p>
+                    <p>【前言】<br>首先，感謝點開來看內容的你，以下內容從【上限】開始包含下面的補充說明都是寫給新手看的基礎知識還有我個人的分類筆記，若是資料有誤，請到我巴哈的文內告知。</p>
+                    <p>【計算項目】<br>限定屬性的類型我不會特別註明，須自己注意，除此之外不能疊加的項目應該不會有重複計算的問題，照著身上裝備填就好。<br>計算項目以數值固定的裝備、被動為主，要發動奧義、按技能、疊層、疊T數等等不能常駐效果的不列，效果量太低也不列（比如遠古時代只有5%技能上限的角色武），沒有列出來的項目可利用「其他」分類的自由輸入欄加算。</p>
+                    <p>【上限】<br>「上限」準確來說是「衰減」補正，在傷害計算中，超過一定範圍的傷害會經過重重衰減，最後只剩下1%反映到計算結果上。實際傷害比預測高個幾萬很正常，但是打不到預測上限的話代表本來傷害就不太夠，建議調整武器配置。<br>
+                        順帶一提，遊戲中的上限天花板為660萬。</p>
+                    <p>【追傷】<br>遊戲中叫追擊，但我習慣叫追傷，指的是一般攻擊之外再追加攻擊的xx%傷害，也算是一種破限手段，但本計算機的宗旨在於避免空有上限打不到的情形，應該不需要增加追傷預測......吧?</p>
                 </article>
             </details>
             <details>
@@ -456,10 +457,20 @@
                 </article>
             </details>
             <details>
+                <summary>固傷補充</summary>
+                <article>
+                    <p>
+                        固傷在計算中屬於最後加算的部份，根據符合的條件給予一個固定傷害，所以簡稱固傷。在這裡的計算上為求方便一律以最大效果量計算，要注意固傷的觸發條件有很多種，如敵MAXHP的1%、給予傷害的xx%、buff數量、DB數量之類，當然也有無條件的固傷。<br>
+                        固傷對於多段技能和追傷這類能增加攻擊「次數」的提升較為明顯，因為每一下攻擊都能吃到固傷效果。像情人節軍神這種普攻分裂成3次的角色(非演示特效，目前只有情軍屬於這種)就是直接加算3次固傷，加上必TA的關係等於每回普攻都是9次固傷。<br>
+                        目前參照wiki的分法分為五大類，技能和被動多項不疊加，兩類中效果取高。但可可蘿的一技和泳火狐的被動卻能疊加，考慮到大概不會有需要兩隻同時上場的套路，這邊就忽略不計了。
+                    </p>
+                </article>
+            </details>
+            <details>
                 <summary>武器補充</summary>
                 <article>
                     <ul>
-                    <li>效果同四象．邪：光金月短、（劍賢、水狐、風貞、柯羅薩斯）解放武。</li>
+                    <li>與四象．邪同類：光金月短、（劍賢、水狐、風貞、柯羅薩斯）解放武。</li>
                     <li>イクシード(exceed/excelsior)：闇高寶斧、黑風媽短、黑鰻魚短、（風維拉、塔尼亞、冰皇）解放武。</li>
                     <li>アーツ(arts)：火連隊劍、水連隊銃、戰斧、天秤、（光教官、光銀姊、情人玉米、仇閃醬、路西烏斯、班特、情人軍神）解放武。</li>
                     <li>チェインフォース(chain force)：風連隊劍、水高寶劍。</li>
