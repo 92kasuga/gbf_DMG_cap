@@ -43,6 +43,13 @@ h4 {
 .separate{
     display: inline-block;
 }
+.highlight{
+    background-color: #FFFF66;
+}
+.underline{
+    padding-bottom: 1px;
+    border-bottom: 1.5px solid #000
+}
 input[type="number"] {
     max-width: 30px;
 }
@@ -148,6 +155,16 @@ th {
 .tooltip .s {
     width: 80px;
 }
+.tooltip .two {
+    height: 31px;
+    width: 80px;
+    bottom: -20px;
+}
+.tooltip .three {
+    height: 47px;
+    width: 80px;
+    bottom: -45px;
+}
 .tooltip:hover .tooltiptext {
     display: inline-block;
 }
@@ -217,6 +234,15 @@ footer {
     }
     .tooltip .s {
         width: 90px;
+    }
+    .tooltip .two {
+        height: 40px;
+        width: 90px;
+    }
+    .tooltip .three {
+        height: 55px;
+        width: 95px;
+        bottom: -50px;
     }
     summary {
         line-height: 3.2em;

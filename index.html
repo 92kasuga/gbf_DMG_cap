@@ -110,7 +110,7 @@
                             </select>
                         </td>
                         <td>
-                            <div class="tooltip">格蘭丁武<img src="images/hint.png">
+                            <div class="tooltip"><span class="underline">格蘭丁武</span>
                                 <span class="tooltiptext">數量為對應武器的總數</span>
                             </div>                   
                         </td>
@@ -179,7 +179,7 @@
                             </select>
                         </td>
                         <td>
-                            <div class="tooltip">通常英傑大<img src="images/hint.png">
+                            <div class="tooltip"><span class="underline">通常英傑大</span>
                                 <span class="tooltiptext">效果量同"通常必殺大"</span>
                             </div>
                         </td>
@@ -211,7 +211,7 @@
                     <tr>
                         <td><label class="checkbox"><input name="twoSword" type="checkbox" value="0.1" onclick="cancel(this)"><i class="style"></i></label>
                         <td>
-                            <div class="tooltip">雙劍術<img src="images/hint.png">
+                            <div class="tooltip"><span class="underline">雙劍術</span>
                                 <span class="tooltiptext s">4★職武技能</span>
                             </div> 
                         </td>
@@ -318,7 +318,7 @@
         <section>
             <h4>技能上限</h4>
             <form name="redSkill" id="redSkill">
-                <p>＊僅列幾個傷害很兇的技能，其他請洽各大攻略網。＊</p>
+                <p ><span class="highlight">＊僅列幾個傷害很兇的技能，其他請洽各大攻略網。＊</span></p>
                 <p>
                     <label><input name="chosenSkill" type="radio" value="0" checked> 自訂(<input style="max-width: 40px" name="cusSkill" type="number" min="0" value="0"> 萬)</label>
                     <label><input name="chosenSkill" type="radio" value="42"> 通用Ⅰ (42萬)</label>
@@ -345,67 +345,90 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td class="attack" rowspan="3">強化</td><td>技能</td><td rowspan="2"><label><input name="buffDmg" type="radio" value="0" checked> </label></td>
-                        <td><label><input name="buffDmg" type="radio" value="1"> <span class="writeMode">聖德芬</span></label></td><td>　　　</td><td></td>
-                        <td><label><input name="buffDmg" type="radio" value="3"> <span class="writeMode">可可蘿</span></label></td>
-                        <td><label><input name="buffDmg" type="radio" value="5"> <span class="writeMode">會心</span></label></td>
+                        <td class="attack" rowspan="4">強化</td><td>技能</td><td rowspan="3"><label><input name="buffDmg" type="radio" value="0" checked> </label></td>
+                        <td><label><input name="buffDmg" type="radio" value="1"> 
+                            <div class="tooltip"><span class="underline">詳細</span>
+                                <span class="tooltiptext s">(SSR)聖德芬</span>
+                            </div>
+                        </label></td><td>　　　</td><td></td>
+                        <td><label><input name="buffDmg" type="radio" value="3"> 
+                            <div class="tooltip"><span class="underline">詳細</span>
+                                <span class="tooltiptext two">(SSR)可可蘿<br>(SR)貝熊</span>
+                            </div>
+                        </label></td>
+                        <td>　　　</td>
                     </tr>
                     <tr>
                         <td class="gray">被動</td><td class="gray"></td><td class="gray"></td>
-                        <td class="gray"><label><input name="buffDmg" type="radio" value="2"> <span class="writeMode">土教官</span></label></td>
-                        <td class="gray"><label><input name="buffDmg" type="radio" value="3"> <span class="writeMode">泳火狐</span></label></td>
+                        <td class="gray"><label><input name="buffDmg" type="radio" value="2"> 
+                            <div class="tooltip"><span class="underline">詳細</span>
+                                <span class="tooltiptext three">(SSR)土教官<br>(SSR)柯南<br>(SR)卡西烏斯</span>
+                            </div>
+                        </label></td>
+                        <td class="gray"><label><input name="buffDmg" type="radio" value="3"> 
+                            <div class="tooltip"><span class="underline">詳細</span>
+                                <span class="tooltiptext s">(SSR)泳火狐</span>
+                            </div>
+                        </label></td>
                         <td class="gray"></td>
                     </tr>
                     <tr>
-                        <td>蘿賽塔<div class="separate">(泳裝召)</div></td><td><label><input name="specialBuffDmg" type="radio" value="0" checked> </label></td>
-                        <td><label><input name="specialBuffDmg" type="radio" value="1"> ★0</label></td><td></td>
-                        <td><label><input name="specialBuffDmg" type="radio" value="2"> ★3</label></td><td></td>
+                        <td>會心</td>
+                        <td></td><td></td>
+                        <td></td><td></td>
+                        <td><label><input name="buffDmg" type="radio" value="5"> </label></td>
+                    </tr>
+                    <tr>
+                        <td class="gray">蘿賽塔<div class="separate">(泳裝召)</div></td><td class="gray"><label><input name="specialBuffDmg" type="radio" value="0" checked> </label></td>
+                        <td class="gray"><label><input name="specialBuffDmg" type="radio" value="1"> ★0</label></td><td class="gray"></td>
+                        <td class="gray"><label><input name="specialBuffDmg" type="radio" value="2"> ★3</label></td><td class="gray"></td>
+                        <td class="gray"></td>
+                    </tr>
+                    <tr>
+                        <td class="normal">武器</td><td>虛空武</td>
+                        <td><label><input name="weaponDmg" type="radio" value="0" checked> </label></td>
+                        <td></td><td ></td><td></td>
+                        <td><label><input name="weaponDmg" type="radio" value="3"> </label></td>
                         <td></td>
-                    </tr>
-                    <tr>
-                        <td class="normal">武器</td><td class="gray">虛空武</td>
-                        <td class="gray"><label><input name="weaponDmg" type="radio" value="0" checked> </label></td>
-                        <td class="gray"></td><td class="gray"></td><td class="gray"></td>
-                        <td class="gray"><label><input name="weaponDmg" type="radio" value="3"> </label></td>
-                        <td class="gray"></td>
                     </tr>
                     <tr>
                         <td class="CA">加護</td>
-                        <td>彼列</td>
-                        <td><label><input name="subDmg" type="radio" value="0" checked> </label></td>
-                        <td></td>
-                        <td><label><input name="subDmg" type="radio" value="1.5"> ★0</label></td>
-                        <td><label><input name="subDmg" type="radio" value="2"> ★3</label></td>
-                        <td><label><input name="subDmg" type="radio" value="3"> ★4</label></td>
-                        <td></td>
+                        <td class="gray">彼列</td>
+                        <td class="gray"><label><input name="subDmg" type="radio" value="0" checked> </label></td>
+                        <td class="gray"></td>
+                        <td class="gray"><label><input name="subDmg" type="radio" value="1.5"> ★0</label></td>
+                        <td class="gray"><label><input name="subDmg" type="radio" value="2"> ★3</label></td>
+                        <td class="gray"><label><input name="subDmg" type="radio" value="3"> ★4</label></td>
+                        <td class="gray"></td>
                     </tr>
                     <tr>
                         <td class="skill">領域</td>
-                        <td class="gray">情軍</td>
-                        <td class="gray"><label><input name="fieldDmg" type="radio" value="0" checked> </label></td>
-                        <td class="gray"></td><td class="gray"></td><td class="gray"></td>
-                        <td class="gray"><label><input name="fieldDmg" type="radio" value="3"> </label></td>
-                        <td class="gray"></td>
+                        <td>情軍</td>
+                        <td><label><input name="fieldDmg" type="radio" value="0" checked> </label></td>
+                        <td></td><td></td><td></td>
+                        <td><label><input name="fieldDmg" type="radio" value="3"> </label></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td class="CB" rowspan="3">其他</td>
-                        <td>雙子召</td>
-                        <td><label><input name="everbaneDmg" type="radio" value="0" checked> </label></td>
-                        <td><label><input name="everbaneDmg" type="radio" value="1"> </label></td><td></td><td></td><td></td><td></td>
+                        <td class="gray">雙子召</td>
+                        <td class="gray"><label><input name="everbaneDmg" type="radio" value="0" checked> </label></td>
+                        <td class="gray"><label><input name="everbaneDmg" type="radio" value="1"> </label></td>
+                        <td class="gray"></td><td class="gray"></td><td class="gray"></td><td class="gray"></td>
                     </tr>
                     <tr>
-                        <td class="gray">光銀姊</td>
-                        <td class="gray"><label><input name="silvaDmg" type="radio" value="0" checked> </label></td>
-                        <td class="gray"></td><td class="gray"></td><td class="gray"></td>
-                        <td class="gray"><label><input name="silvaDmg" type="radio" value="3"> </label></td>
-                        <td class="gray"></td>
-                    </tr>
-                    <tr>
-                        <td>零</td>
-                        <td><label><input name="reiDmg" type="radio" value="0" checked> </label></td>
+                        <td>光銀姊</td>
+                        <td><label><input name="silvaDmg" type="radio" value="0" checked> </label></td>
                         <td></td><td></td><td></td>
-                        <td><label><input name="reiDmg" type="radio" value="3"> </label></td>
+                        <td><label><input name="silvaDmg" type="radio" value="3"> </label></td>
                         <td></td>
+                    </tr>
+                    <tr>
+                        <td class="gray">零</td>
+                        <td class="gray"><label><input name="reiDmg" type="radio" value="0" checked> </label></td>
+                        <td class="gray"></td><td class="gray"></td><td class="gray"></td>
+                        <td class="gray"><label><input name="reiDmg" type="radio" value="3"> </label></td>
+                        <td class="gray"></td>
                     </tr>
                     </tbody>
                 </table>
@@ -480,7 +503,7 @@
         </section>
         <footer>
             <button onclick="topBtn()" id="topBtn">TOP</button>
-            <p style="font-size: 0.8em">最後更新：2020/03/03</p>
+            <p style="font-size: 0.8em">最後更新：2020/03/10</p>
         </footer>
     </div>
 <script type="text/javascript" src="main.js"></script>
