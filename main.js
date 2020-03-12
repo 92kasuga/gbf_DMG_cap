@@ -54,11 +54,47 @@ function getValue(form, elem){
     const target = Number(form[name= elem].value);
     return target;
 }
+//避免lb誤選
+function reset(){
+    const target = otherType[name= "lb"];
+    if(otherType[name= "charaLb"].value != 0 || otherType[name= "ring"].value != 0){
+        for(i=0; i< target.length; i++) {
+            target[i].disabled = true;
+        }
+        target[0].checked = true;
+    }
+    else{
+        for(i=0; i< target.length; i++) {
+            target[i].disabled = false;
+        }
+    }
+}
+//判斷角色LB種類
+function lb(sort){
+    const target = otherType[name= "charaLb"].value;
+    reset();
+    if(target == sort){
+        return 0.1;
+    }else{
+        return 0;
+    }
+}
+//自訂數值
+function customize(form, sort, elem, order){
+    const target = Number(form[name= sort].value)
+    const val = Number(form[name= elem].value)/100
+    reset();
+    if(target == order){
+        return val;
+    }else {
+        return 0;
+    }
+}
 //計算全部結果
 function calculate(){
-    attackCal();
     CACal();
     skillCal();
+    attackCal();
     CBCal();
 }
 //主手修正
@@ -78,7 +114,7 @@ function cancel(input){
 function fixedDmgSum(){
     const total = getValue(fixedDamage,"buffDmg") + getValue(fixedDamage,"weaponDmg") + getValue(fixedDamage,"specialBuffDmg") +
     getValue(fixedDamage,"subDmg") + getValue(fixedDamage,"fieldDmg") + getValue(fixedDamage,"everbaneDmg") + 
-    getValue(fixedDamage,"silvaDmg") + getValue(fixedDamage,"reiDmg");
+    getValue(fixedDamage,"silvaDmg") + getValue(fixedDamage,"yuelDmg") + getValue(fixedDamage,"reiDmg");
     return total;
 }
 function attackCal(){
@@ -108,6 +144,8 @@ function CACal(){
     isChecked(weaponUp,"omegaCA") +
     handleCommonCap() +
     handleCA() +
+    lb("CA") +
+    customize(otherType,"ring","ringCA", 1) +
     getValue(otherType,"lb") +
     getValue(otherType,"other")/100 +
     getValue(otherType,"otherCA")/100;
@@ -128,6 +166,8 @@ function skillCal(){
     isChecked(weaponUp,"flammaOrbis")+
     handleCommonCap() +
     handleSkill() +
+    lb("skill") +
+    customize(otherType,"ring","ringSkill", 2) +
     getValue(otherType,"lb") +
     getValue(otherType,"other")/100 +
     getValue(otherType,"otherSkill")/100;

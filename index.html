@@ -283,6 +283,18 @@
                     <label><input name="lb" type="radio" value="0.15"> rank195(15%)</label>
                 </p>
                 <p>
+                    【角色LB】
+                    <label><input name="charaLb" type="radio" value="0" checked> 無(0%)</label>
+                    <label><input name="charaLb" type="radio" value="CA"> 奧義上限(10%)</label>
+                    <label><input name="charaLb" type="radio" value="skill"> 技能上限(10%)</label>
+                </p>
+                <p>
+                    【戒指】
+                    <label><input name="ring" type="radio" value="0" checked> 無(0%)</label>
+                    <label><input name="ring" type="radio" value="1"> 奧義上限 <input name="ringCA" type="number" min="6" max="15" value="6">%</label>
+                    <label><input name="ring" type="radio" value="2"> 技能上限 <input name="ringSkill" type="number" min="6" max="15" value="6">%</label>
+                </p>
+                <p>
                     【Buff】
                     <label><input name="buff" type="radio" value="0" checked> 無(0%)</label>
                     <label><input name="buff" type="radio" value="1"> 攻擊大幅UP系(普攻116萬/奧義+50萬)</label>
@@ -365,11 +377,7 @@
                                 <span class="tooltiptext three">(SSR)土教官<br>(SSR)柯南<br>(SR)卡西烏斯</span>
                             </div>
                         </label></td>
-                        <td class="gray"><label><input name="buffDmg" type="radio" value="3"> 
-                            <div class="tooltip"><span class="underline"><img class="icon" src="images/support.png"></span>
-                                <span class="tooltiptext s">(SSR)泳火狐</span>
-                            </div>
-                        </label></td>
+                        <td class="gray"></td>
                         <td class="gray"></td>
                     </tr>
                     <tr>
@@ -410,7 +418,7 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="CB" rowspan="3">其他</td>
+                        <td class="CB" rowspan="4">其他</td>
                         <td class="gray">雙子召</td>
                         <td class="gray"><label><input name="everbaneDmg" type="radio" value="0" checked> </label></td>
                         <td class="gray"><label><input name="everbaneDmg" type="radio" value="1"> <img class="icon" src="images/everbane.png"></label></td>
@@ -424,11 +432,18 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="gray">零</td>
-                        <td class="gray"><label><input name="reiDmg" type="radio" value="0" checked> </label></td>
+                        <td class="gray">泳火狐</td>
+                        <td class="gray"><label><input name="yuelDmg" type="radio" value="0" checked> </label></td>
                         <td class="gray"></td><td class="gray"></td><td class="gray"></td>
-                        <td class="gray"><label><input name="reiDmg" type="radio" value="3"> <img class="icon" src="images/eye.png"></label></td>
+                        <td class="gray"><label><input name="yuelDmg" type="radio" value="3"> <img class="icon" src="images/foxflame.png"></label></td>
                         <td class="gray"></td>
+                    </tr>
+                    <tr>
+                        <td>零</td>
+                        <td><label><input name="reiDmg" type="radio" value="0" checked> </label></td>
+                        <td></td><td></td><td></td>
+                        <td><label><input name="reiDmg" type="radio" value="3"> <img class="icon" src="images/eye.png"></label></td>
+                        <td></td>
                     </tr>
                     </tbody>
                 </table>
@@ -440,7 +455,7 @@
                 <summary>關於本計算機</summary>
                 <article>
                     <p>【前言】<br>首先，感謝點開來看內容的你，以下內容從【上限】開始包含下面的補充說明都是寫給新手看的基礎知識還有我個人的分類筆記，有任何問題請到我巴哈的文內告知。</p>
-                    <p>【計算項目】<br>限定屬性的類型我不會特別註明，需自己注意。基本上照著身上裝備填就好，只有武器盤提供的上限設有各別的效果上限。<br>計算項目以數值固定的裝備、被動為主，要發動奧義、按技能、疊層、疊T數等等不能常駐效果的不列，效果量太低也不列（比如遠古時代只有5%技能上限的角色武），沒有列出來的項目可利用「其他」分類的自由輸入欄加算。</p>
+                    <p>【計算項目】<br>限定屬性的類型我不會特別註明，需自己注意。基本上照著身上裝備填就好，有衝突的項目已盡量做了避免誤選的限制。<br>計算項目以數值固定的裝備、被動為主，要發動奧義、按技能、疊層、疊T數等等不能常駐效果的不列，效果量太低也不列（比如遠古時代只有5%技能上限的角色武），沒有列出來的項目可利用「其他」分類的自由輸入欄加算。</p>
                     <p>【上限】<br>「上限」準確來說是「衰減」補正，在傷害計算中，超過一定範圍的傷害會經過重重衰減，最後只剩下1%反映到計算結果上。實際傷害比預測高個幾萬很正常，但是打不到預測上限的話代表本來傷害就不太夠，建議調整武器配置。<br>
                         順帶一提，遊戲中的上限天花板為660萬。</p>
                     <p>【追傷】<br>遊戲中叫追擊，但我習慣叫追傷，指的是一般攻擊之外再追加攻擊的xx%傷害，也算是一種破限手段，但本計算機的宗旨在於避免空有上限打不到的情形，應該不需要增加追傷預測......吧?</p>
@@ -486,7 +501,7 @@
                     <p>
                         固傷在計算中屬於最後加算的部份，根據符合的條件給予一個固定傷害，所以簡稱固傷。在這裡的計算上為求方便一律以最大效果量計算，要注意固傷的觸發條件有很多種，如敵MAXHP的1%、給予傷害的xx%、buff數量、DB數量之類，當然也有無條件的固傷。<br>
                         固傷對於多段技能和追傷這類能增加攻擊「次數」的提升較為明顯，因為每一下攻擊都能吃到固傷效果。像情人節軍神這種普攻分裂成3次的角色(非演示特效，目前只有情軍屬於這種)就是直接加算3次固傷，加上必TA的關係等於每回普攻都是9次固傷。<br>
-                        目前參照wiki的分法分為五大類，技能和被動多項不疊加，兩類中效果取高。但可可蘿的一技和泳火狐的被動卻能疊加，考慮到大概不會有需要兩隻同時上場的套路，這邊就忽略不計了。
+                        目前參照wiki的分法分為五大類，技能和被動多項不疊加，兩類中效果取高。但可可蘿的一技和泳火狐的被動卻能疊加，猜測可能是泳火狐固傷的主體是狐火，所以將它分到了其他類。
                     </p>
                 </article>
             </details>
@@ -504,7 +519,7 @@
         </section>
         <footer>
             <button onclick="topBtn()" id="topBtn">TOP</button>
-            <p style="font-size: 0.8em">最後更新：2020/03/10</p>
+            <p style="font-size: 0.8em">最後更新：2020/03/12</p>
         </footer>
     </div>
 <script type="text/javascript" src="main.js"></script>
