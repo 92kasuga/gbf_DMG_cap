@@ -164,8 +164,8 @@ th {
     width: 80px;
     bottom: -20px;
 }
-.tooltip .three {
-    height: 47px;
+.tooltip .four {
+    height: 63px;
     width: 80px;
     bottom: -45px;
 }
@@ -233,8 +233,8 @@ footer {
         height: 38px;
         width: 90px;
     }
-    .tooltip .three {
-        height: 55px;
+    .tooltip .four {
+        height: 75px;
         width: 95px;
         bottom: -50px;
     }
