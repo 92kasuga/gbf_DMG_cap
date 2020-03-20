@@ -360,28 +360,41 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td class="attack" rowspan="4">強化</td><td>技能</td><td rowspan="3"><label><input name="buffDmg" type="radio" value="0" checked> </label></td>
+                        <td class="attack" rowspan="6">強化</td><td>技能</td><td rowspan="5"><label><input name="buffDmg" type="radio" value="0" checked> </label></td>
                         <td><label><input name="buffDmg" type="radio" value="1"> 
                             <div class="tooltip"><span class="underline"><img class="icon" src="images/buff.png"></span>
-                                <span class="tooltiptext s">(SSR)聖德芬</span>
+                                <span class="tooltiptext s">光聖德芬</span>
                             </div>
-                        </label></td><td>　　　</td><td></td>
+                        </label></td><td>　　　</td>
+                        <td><label><input name="buffDmg" type="radio" value="2"> 
+                            <div class="tooltip"><span class="underline"><img class="icon" src="images/buff.png"></span>
+                                <span class="tooltiptext two">火無限<br>小紅帽自身</span>
+                            </div>
+                        </label></td>
                         <td><label><input name="buffDmg" type="radio" value="3"> 
                             <div class="tooltip"><span class="underline"><img class="icon" src="images/buff.png"></span>
-                                <span class="tooltiptext two">(SSR)可可蘿<br>(SR)貝熊</span>
+                                <span class="tooltiptext two">風可可蘿<br>浴衣潔西卡</span>
                             </div>
                         </label></td>
                         <td>　　　</td>
                     </tr>
                     <tr>
-                        <td class="gray">被動</td><td class="gray"></td><td class="gray"></td>
-                        <td class="gray"><label><input name="buffDmg" type="radio" value="2"> 
-                            <div class="tooltip"><span class="underline"><img class="icon" src="images/support.png"></span>
-                                <span class="tooltiptext four">(SSR)土教官<br>(SSR)柯南<br>(SSR)泳雙子<br>(SR)卡西烏斯</span>
+                        <td class="gray">奧義</td>
+                        <td class="gray"><label><input name="buffDmg" type="radio" value="1"> 
+                            <div class="tooltip"><span class="underline"><img class="icon" src="images/buff.png"></span>
+                                <span class="tooltiptext two">虛空斧<br>暗連隊拳</span>
+                            </div>
+                        </label></td><td class="gray"></td>
+                        <td class="gray"></td><td class="gray"><label><input name="buffDmg" type="radio" value="3"> 
+                            <div class="tooltip"><span class="underline"><img class="icon" src="images/buff.png"></span>
+                                <span class="tooltiptext s">暗六道槍</span>
                             </div>
                         </label></td>
-                        <td class="gray"></td>
-                        <td class="gray"></td>
+                        <td class="gray"><label><input name="buffDmg" type="radio" value="5"> 
+                            <div class="tooltip"><span class="underline"><img class="icon" src="images/buff.png"></span>
+                                <span class="tooltiptext s">火無限自身</span>
+                            </div>
+                        </label></td>
                     </tr>
                     <tr>
                         <td>會心</td>
@@ -390,9 +403,41 @@
                         <td><label><input name="buffDmg" type="radio" value="5"> <img class="icon" src="images/keen.png"></label></td>
                     </tr>
                     <tr>
-                        <td class="gray">蘿賽塔<div class="separate">(泳裝召)</div></td><td class="gray"><label><input name="specialBuffDmg" type="radio" value="0" checked> </label></td>
-                        <td class="gray"><label><input name="specialBuffDmg" type="radio" value="1"> <img class="icon" src="images/star0.png"></label></td><td class="gray"></td>
-                        <td class="gray"><label><input name="specialBuffDmg" type="radio" value="2"> <img class="icon" src="images/star3.png"></label></td><td class="gray"></td>
+                        <td class="gray">其他</td><td class="gray"></td><td class="gray"></td>
+                        <td class="gray"><label><input name="buffDmg" type="radio" value="2"> 
+                            <div class="tooltip"><span class="underline"><img class="icon" src="images/support.png"></span>
+                                <span class="tooltiptext s">土教官自身</span>
+                            </div>
+                        </label></td>
+                        <td class="gray"><label><input name="buffDmg" type="radio" value="3"> 
+                            <div class="tooltip"><span class="underline"><img class="icon" src="images/support.png"></span>
+                                <span class="tooltiptext s">火卡蓮自身</span>
+                            </div>
+                        </label></td>
+                        <td class="gray"><label><input name="buffDmg" type="radio" value="5"> 
+                            <div class="tooltip"><span class="underline"><img class="icon" src="images/buff.png"></span>
+                                <span class="tooltiptext two">士兵增傷彈<br>土索利茲自身</span>
+                            </div>
+                        </label></td>
+                    </tr>
+                    <tr>
+                        <td>蘿賽塔<div class="separate">(泳裝召)</div></td>
+                        <td><label><input name="buffDmg" type="radio" value="1"> <img class="icon" src="images/star0.png"></label></td><td></td>
+                        <td><label><input name="buffDmg" type="radio" value="2"> <img class="icon" src="images/star3.png"></label></td><td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="gray">被動</td>
+                        <td class="gray"><label><input name="specialBuffDmg" type="radio" value="0" checked> </label></td>
+                        <td class="gray"></td><td class="gray"></td>
+                        <td class="gray"><label><input name="specialBuffDmg" type="radio" value="2"> 
+                            <div class="tooltip"><span class="underline"><img class="icon" src="images/support.png"></span>
+                                <span class="tooltiptext s">泳裝雙子</span>
+                            </div></label></td>
+                        <td class="gray"><label><input name="specialBuffDmg" type="radio" value="3"> 
+                            <div class="tooltip"><span class="underline"><img class="icon" src="images/support.png"></span>
+                                <span class="tooltiptext s">泳裝尤艾爾</span>
+                            </div></label></td>
                         <td class="gray"></td>
                     </tr>
                     <tr>
@@ -413,7 +458,21 @@
                         <td class="gray"></td>
                     </tr>
                     <tr>
-                        <td class="skill">領域</td>
+                        <td class="skill" rowspan="2">弱體</td>
+                        <td>塔薇娜</td>
+                        <td rowspan="2"><label><input name="debuffDmg" type="radio" value="0" checked> </label></td>
+                        <td></td><td></td><td></td>
+                        <td><label><input name="debuffDmg" type="radio" value="3"> <img class="icon" src="images/tabina.png"></label></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="gray">光銀姊</td>
+                        <td class="gray"></td><td class="gray"></td><td class="gray"></td>
+                        <td class="gray"><label><input name="debuffDmg" type="radio" value="3"> <img class="icon" src="images/weakpoint.png"></label></td>
+                        <td class="gray"></td>
+                    </tr>
+                    <tr>
+                        <td class="CB">領域</td>
                         <td>情軍</td>
                         <td><label><input name="fieldDmg" type="radio" value="0" checked> </label></td>
                         <td></td><td></td><td></td>
@@ -421,25 +480,11 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="CB" rowspan="4">其他</td>
+                        <td class="CB" rowspan="2">特殊</td>
                         <td class="gray">雙子召</td>
                         <td class="gray"><label><input name="everbaneDmg" type="radio" value="0" checked> </label></td>
                         <td class="gray"><label><input name="everbaneDmg" type="radio" value="1"> <img class="icon" src="images/everbane.png"></label></td>
                         <td class="gray"></td><td class="gray"></td><td class="gray"></td><td class="gray"></td>
-                    </tr>
-                    <tr>
-                        <td>光銀姊</td>
-                        <td><label><input name="silvaDmg" type="radio" value="0" checked> </label></td>
-                        <td></td><td></td><td></td>
-                        <td><label><input name="silvaDmg" type="radio" value="3"> <img class="icon" src="images/weakpoint.png"></label></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td class="gray">泳火狐</td>
-                        <td class="gray"><label><input name="yuelDmg" type="radio" value="0" checked> </label></td>
-                        <td class="gray"></td><td class="gray"></td><td class="gray"></td>
-                        <td class="gray"><label><input name="yuelDmg" type="radio" value="3"> <img class="icon" src="images/foxflame.png"></label></td>
-                        <td class="gray"></td>
                     </tr>
                     <tr>
                         <td>零</td>
@@ -461,7 +506,7 @@
                     <p>【計算項目】<br>限定屬性的類型我不會特別註明，需自己注意。基本上照著身上裝備填就好，有衝突的項目盡量做了避免誤選的限制。<br>計算項目以數值固定的裝備、被動為主，要發動奧義、按技能、疊層、疊T數等等不能常駐效果的不列，效果量太低也不列（比如遠古時代只有5%技能上限的角色武），沒有列出來的項目可利用「其他」分類的自由輸入欄加算。</p>
                     <p>【上限】<br>「上限」準確來說是「衰減」補正，在傷害計算中，超過一定範圍的傷害會經過重重衰減，最後只剩下1%反映到計算結果上。實際傷害比預測高個幾萬很正常，但是打不到預測上限的話代表本來傷害就不太夠，建議調整武器配置。<br>
                         順帶一提，遊戲中的上限天花板為660萬。</p>
-                    <p>【追傷】<br>遊戲中叫追擊，但我習慣叫追傷，指的是一般攻擊之外再追加攻擊的xx%傷害，也算是一種破限手段，但本計算機的宗旨在於避免空有上限打不到的情形，應該不需要增加追傷預測......吧?</p>
+                    <p>【追傷】<br>遊戲中叫追擊，但我習慣叫追傷，指的是一般攻擊之外再追加攻擊的xx%傷害，也算是一種破限手段，但本計算機的宗旨在於避免空有上限打不到的情形，暫不增加追傷預測。</p>
                 </article>
             </details>
             <details>
@@ -504,7 +549,7 @@
                     <p>
                         固傷在計算中屬於最後加算的部份，根據符合的條件給予一個固定傷害，所以簡稱固傷。在這裡的計算上為求方便一律以最大效果量計算，要注意固傷的觸發條件有很多種，如敵MAXHP的1%、給予傷害的xx%、buff數量、DB數量之類，當然也有無條件的固傷。<br>
                         固傷對於多段技能和追傷這類能增加攻擊「次數」的提升較為明顯，因為每一下攻擊都能吃到固傷效果。像情人節軍神這種普攻分裂成3次的角色(非演示特效，目前只有情軍屬於這種)就是直接加算3次固傷，加上必TA的關係等於每回普攻都是9次固傷。<br>
-                        目前參照wiki的分法分為五大類，技能和被動多項不疊加，兩類中效果取高。但可可蘿的一技和泳火狐的被動卻能疊加，猜測可能是泳火狐固傷的主體是狐火，所以將它分到了其他類。
+                        目前參照wiki和中文SSR list的分法分為六大類和若干細項，同種類中效果取高。
                     </p>
                 </article>
             </details>

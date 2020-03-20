@@ -112,9 +112,9 @@ function cancel(input){
 }
 //==============最終上限算式==============
 function fixedDmgSum(){
-    const total = getValue(fixedDamage,"buffDmg") + getValue(fixedDamage,"weaponDmg") + getValue(fixedDamage,"specialBuffDmg") +
-    getValue(fixedDamage,"subDmg") + getValue(fixedDamage,"fieldDmg") + getValue(fixedDamage,"everbaneDmg") + 
-    getValue(fixedDamage,"silvaDmg") + getValue(fixedDamage,"yuelDmg") + getValue(fixedDamage,"reiDmg");
+    const total = getValue(fixedDamage,"buffDmg") + getValue(fixedDamage,"specialBuffDmg") + getValue(fixedDamage,"weaponDmg") +
+    getValue(fixedDamage,"subDmg") + getValue(fixedDamage,"debuffDmg") +
+    getValue(fixedDamage,"fieldDmg") + getValue(fixedDamage,"everbaneDmg") + getValue(fixedDamage,"reiDmg");
     return total;
 }
 function attackCal(){
