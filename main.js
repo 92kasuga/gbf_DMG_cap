@@ -57,7 +57,7 @@ function getValue(form, elem){
 //避免lb誤選
 function reset(){
     const target = otherType[name= "lb"];
-    if(otherType[name= "charaLb"].value != 0 || otherType[name= "ring"].value != 0){
+    if(otherType[name= "LbCA"].checked || otherType[name= "LbSkill"].checked || otherType[name= "ring"].value != 0){
         for(i=0; i< target.length; i++) {
             target[i].disabled = true;
         }
@@ -69,13 +69,13 @@ function reset(){
         }
     }
 }
-//判斷角色LB種類
-function lb(sort){
-    const target = otherType[name= "charaLb"].value;
-    reset();
-    if(target == sort){
-        return 0.1;
-    }else{
+//判斷角色LB
+function lb(form, elem, input){
+    const target = form[name= elem];
+    const val = Number(form[name= input].value)/100
+    if(target.checked){
+        return val;
+    } else {
         return 0;
     }
 }
@@ -144,7 +144,7 @@ function CACal(){
     isChecked(weaponUp,"omegaCA") +
     handleCommonCap() +
     handleCA() +
-    lb("CA") +
+    lb(otherType,"LbCA","lbCAVal") +
     customize(otherType,"ring","ringCA", 1) +
     getValue(otherType,"lb") +
     getValue(otherType,"other")/100 +
@@ -166,7 +166,7 @@ function skillCal(){
     isChecked(weaponUp,"flammaOrbis")+
     handleCommonCap() +
     handleSkill() +
-    lb("skill") +
+    lb(otherType,"LbSkill","lbSkillVal") +
     customize(otherType,"ring","ringSkill", 2) +
     getValue(otherType,"lb") +
     getValue(otherType,"other")/100 +

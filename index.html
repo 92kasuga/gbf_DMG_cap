@@ -19,7 +19,7 @@
         <section><details><summary>使用範例（闇主：希斯）</summary><img src="images/example.png"></details></section>
         <section><details><summary>使用範例2（技能）</summary><img src="images/skill.png"></details></section>
         <section>
-            <h4>最終傷害UP（天司類）</h4>
+            <h4>天司類</h4>
             <form name="seraphicUp" id="seraphicUp">
             <p>
             <div class="separate">【天司武】
@@ -274,7 +274,7 @@
             </form>
         </section>
         <section>
-            <h4>其他（LB、戒指等）</h4>
+            <h4>其他上限UP類（LB、戒指等）</h4>
             <form name="otherType" id="otherType">
                 <p>
                     【主角LB】
@@ -284,9 +284,12 @@
                 </p>
                 <p>
                     【角色LB】
-                    <label><input name="charaLb" type="radio" value="0" checked> 無(0%)</label>
-                    <label><input name="charaLb" type="radio" value="CA"> 奧義上限(10%)</label>
-                    <label><input name="charaLb" type="radio" value="skill"> 技能上限(10%)</label>
+                    <label class="checkbox"><input name="LbCA" type="checkbox"><i class="style"></i> 
+                        奧義上限 <input name="lbCAVal" type="number" min="0" max="40" step="10" value="10">%
+                    </label> ｜
+                    <label class="checkbox"><input name="LbSkill" type="checkbox"><i class="style"></i> 
+                        技能上限 <input name="lbSkillVal" type="number" min="0" max="40" step="10" value="10">%
+                    </label>
                 </p>
                 <p>
                     【戒指】
@@ -458,9 +461,9 @@
                         <td class="gray"></td>
                     </tr>
                     <tr>
-                        <td class="skill" rowspan="2">弱體</td>
+                        <td class="skill" rowspan="3">弱體</td>
                         <td>塔薇娜</td>
-                        <td rowspan="2"><label><input name="debuffDmg" type="radio" value="0" checked> </label></td>
+                        <td rowspan="3"><label><input name="debuffDmg" type="radio" value="0" checked> </label></td>
                         <td></td><td></td><td></td>
                         <td><label><input name="debuffDmg" type="radio" value="3"> <img class="icon" src="images/tabina.png"></label></td>
                         <td></td>
@@ -468,30 +471,36 @@
                     <tr>
                         <td class="gray">光銀姊</td>
                         <td class="gray"></td><td class="gray"></td><td class="gray"></td>
-                        <td class="gray"><label><input name="debuffDmg" type="radio" value="3"> <img class="icon" src="images/weakpoint.png"></label></td>
+                        <td class="gray"><label><input name="debuffDmg" type="radio" value="3"> <img class="icon" src="images/silva.png"></label></td>
                         <td class="gray"></td>
                     </tr>
                     <tr>
-                        <td class="CB">領域</td>
-                        <td>情軍</td>
-                        <td><label><input name="fieldDmg" type="radio" value="0" checked> </label></td>
+                        <td>lm貞德</td>
                         <td></td><td></td><td></td>
-                        <td><label><input name="fieldDmg" type="radio" value="3"> <img class="icon" src="images/grimnir.png"></label></td>
+                        <td><label><input name="debuffDmg" type="radio" value="3"> <img class="icon" src="images/jeanne.png"></label></td>
                         <td></td>
+                    </tr>
+                    <tr>
+                        <td class="CB">領域</td>
+                        <td class="gray">情軍</td>
+                        <td class="gray"><label><input name="fieldDmg" type="radio" value="0" checked> </label></td>
+                        <td class="gray"></td><td class="gray"></td><td class="gray"></td>
+                        <td class="gray"><label><input name="fieldDmg" type="radio" value="3"> <img class="icon" src="images/grimnir.png"></label></td>
+                        <td class="gray"></td>
                     </tr>
                     <tr>
                         <td class="CB" rowspan="2">特殊</td>
-                        <td class="gray">雙子召</td>
-                        <td class="gray"><label><input name="everbaneDmg" type="radio" value="0" checked> </label></td>
-                        <td class="gray"><label><input name="everbaneDmg" type="radio" value="1"> <img class="icon" src="images/everbane.png"></label></td>
-                        <td class="gray"></td><td class="gray"></td><td class="gray"></td><td class="gray"></td>
+                        <td>雙子召</td>
+                        <td><label><input name="everbaneDmg" type="radio" value="0" checked> </label></td>
+                        <td><label><input name="everbaneDmg" type="radio" value="1"> <img class="icon" src="images/everbane.png"></label></td>
+                        <td></td><td></td><td></td><td></td>
                     </tr>
                     <tr>
-                        <td>零</td>
-                        <td><label><input name="reiDmg" type="radio" value="0" checked> </label></td>
-                        <td></td><td></td><td></td>
-                        <td><label><input name="reiDmg" type="radio" value="3"> <img class="icon" src="images/eye.png"></label></td>
-                        <td></td>
+                        <td class="gray">零</td>
+                        <td class="gray"><label><input name="reiDmg" type="radio" value="0" checked> </label></td>
+                        <td class="gray"></td><td class="gray"></td><td class="gray"></td>
+                        <td class="gray"><label><input name="reiDmg" type="radio" value="3"> <img class="icon" src="images/rei.png"></label></td>
+                        <td class="gray"></td>
                     </tr>
                     </tbody>
                 </table>
