@@ -100,12 +100,10 @@ function calculate(){
 //主手修正
 function cancel(input){
     if(input.checked == true){
-        weaponUp[name= "astralAttack"].checked = false;
         weaponUp[name= "huanglong"].checked = false;
         weaponUp[name= "twoSword"].checked = false;
         weaponUp[name= "flammaOrbis"].checked = false;
         weaponUp[name= "qilinLyre"].checked = false;
-        weaponUp[name= "astralSkill"].checked = false;
         weaponUp[name= "kengo"].checked = false;
         input.checked= true;
     }

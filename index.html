@@ -118,7 +118,7 @@
                     </tr>
                     <tr><th class="normal" colspan="9">普攻上限</th></tr>
                     <tr>
-                        <td><label class="checkbox"><input name="astralAttack" type="checkbox" value="0.1" onclick="cancel(this)"><i class="style"></i></label></td><td>主手星幽武</td>
+                        <td><label class="checkbox"><input name="astralAttack" type="checkbox" value="0.1"><i class="style"></i></label></td><td>星幽武</td>
                         <td colspan="2">條件10%</td><td colspan="3">-</td><td>-</td><td rowspan="2">10%</td>
                     </tr>
                     <tr>
@@ -226,7 +226,7 @@
                         <td colspan="2">20%</td><td colspan="3">-</td><td>-</td><td>20%</td>
                     </tr>
                     <tr>
-                        <td><label class="checkbox"><input name="astralSkill" type="checkbox" value="0.5" onclick="cancel(this)"><i class="style"></i></label><td>主手星幽武</td>
+                        <td><label class="checkbox"><input name="astralSkill" type="checkbox" value="0.5"><i class="style"></i></label><td>星幽武</td>
                         <td colspan="2">最大50%</td><td colspan="3">-</td><td>-</td><td rowspan="2">50%</td>
                     </tr>
                     <tr>
@@ -363,23 +363,11 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td class="attack" rowspan="6">強化</td><td>技能</td><td rowspan="5"><label><input name="buffDmg" type="radio" value="0" checked> </label></td>
-                        <td><label><input name="buffDmg" type="radio" value="1"> 
-                            <div class="tooltip"><span class="underline"><img class="icon" src="images/buff.png"></span>
-                                <span class="tooltiptext s">光聖德芬</span>
-                            </div>
-                        </label></td><td>　　　</td>
-                        <td><label><input name="buffDmg" type="radio" value="2"> 
-                            <div class="tooltip"><span class="underline"><img class="icon" src="images/buff.png"></span>
-                                <span class="tooltiptext two">火無限<br>小紅帽自身</span>
-                            </div>
-                        </label></td>
-                        <td><label><input name="buffDmg" type="radio" value="3"> 
-                            <div class="tooltip"><span class="underline"><img class="icon" src="images/buff.png"></span>
-                                <span class="tooltiptext two">風可可蘿<br>浴衣潔西卡</span>
-                            </div>
-                        </label></td>
-                        <td>　　　</td>
+                        <td class="attack" rowspan="6">強化</td>
+                        <td>會心</td><td rowspan="5"><label><input name="buffDmg" type="radio" value="0" checked> </label></td>
+                        <td></td><td></td>
+                        <td></td><td></td>
+                        <td><label><input name="buffDmg" type="radio" value="5"> <img class="icon" src="images/keen.png"></label></td>
                     </tr>
                     <tr>
                         <td class="gray">奧義</td>
@@ -400,10 +388,23 @@
                         </label></td>
                     </tr>
                     <tr>
-                        <td>會心</td>
-                        <td></td><td></td>
-                        <td></td><td></td>
-                        <td><label><input name="buffDmg" type="radio" value="5"> <img class="icon" src="images/keen.png"></label></td>
+                        <td>技能</td>
+                        <td><label><input name="buffDmg" type="radio" value="1"> 
+                            <div class="tooltip"><span class="underline"><img class="icon" src="images/buff.png"></span>
+                                <span class="tooltiptext s">光聖德芬</span>
+                            </div>
+                        </label></td><td>　　　</td>
+                        <td><label><input name="buffDmg" type="radio" value="2"> 
+                            <div class="tooltip"><span class="underline"><img class="icon" src="images/buff.png"></span>
+                                <span class="tooltiptext two">火無限<br>暗小紅帽自身</span>
+                            </div>
+                        </label></td>
+                        <td><label><input name="buffDmg" type="radio" value="3"> 
+                            <div class="tooltip"><span class="underline"><img class="icon" src="images/buff.png"></span>
+                                <span class="tooltiptext two">風可可蘿<br>浴衣潔西卡</span>
+                            </div>
+                        </label></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td class="gray">其他</td><td class="gray"></td><td class="gray"></td>
@@ -548,6 +549,8 @@
                             <li>火黑道狐二技(10%)</li>
                             <li>星幽斧奧義(10%)</li>
                             <li>天女limit技(斧得意15%)</li>
+                            <li>萊茵哈薩被動(拳得意3%)</li>
+                            <li>火星幽斧奧義(10%)</li>
                         </ul>
                     </p>
                 </article>
@@ -576,7 +579,7 @@
         </section>
         <footer>
             <button onclick="topBtn()" id="topBtn">TOP</button>
-            <p style="font-size: 0.8em">最後更新：2020/03/20</p>
+            <p style="font-size: 0.8em">最後更新：2020/05/27</p>
         </footer>
     </div>
 <script type="text/javascript" src="main.js"></script>
